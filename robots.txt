@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cumia-putzsystem.de/sitemap.xml
+Sitemap: https://www.cumia-putzwerk.de/sitemap.xml
