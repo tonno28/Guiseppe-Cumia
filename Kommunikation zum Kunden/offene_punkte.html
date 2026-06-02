@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cumia Putzsystem · Offene Punkte vom Kunden</title>
+<style>
+  @page { size: A4; margin: 22mm 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1F2937;
+    line-height: 1.55;
+    font-size: 11pt;
+    margin: 0;
+  }
+  header {
+    border-bottom: 2px solid #B85742;
+    padding-bottom: 14pt;
+    margin-bottom: 22pt;
+  }
+  .eyebrow {
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B85742;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 26pt;
+    margin: 6pt 0 4pt;
+    color: #1F2937;
+    font-weight: 600;
+  }
+  .meta {
+    font-size: 9pt;
+    color: #6B7280;
+  }
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 16pt;
+    margin: 22pt 0 10pt;
+    color: #1F2937;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 4pt;
+    font-weight: 600;
+  }
+  .intro {
+    background: #FAF6EF;
+    border-left: 3px solid #B85742;
+    padding: 10pt 12pt;
+    font-size: 10pt;
+    margin-bottom: 18pt;
+    color: #374151;
+  }
+  ul.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.checklist li {
+    padding: 8pt 0 8pt 26pt;
+    position: relative;
+    border-bottom: 1px dashed #E5E7EB;
+  }
+  ul.checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11pt;
+    width: 14pt;
+    height: 14pt;
+    border: 1.5pt solid #B85742;
+    border-radius: 3pt;
+    background: #ffffff;
+  }
+  ul.checklist li.done::before {
+    background: #7A8471;
+    border-color: #5F6A57;
+  }
+  ul.checklist li.done::after {
+    content: "✓";
+    position: absolute;
+    left: 2.5pt;
+    top: 7pt;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 11pt;
+  }
+  ul.checklist li.done .label {
+    text-decoration: line-through;
+    color: #6B7280;
+  }
+  .label {
+    font-weight: 600;
+    color: #1F2937;
+  }
+  .desc {
+    display: block;
+    font-size: 9.5pt;
+    color: #4B5563;
+    margin-top: 2pt;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 7.5pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1pt 6pt;
+    border-radius: 8pt;
+    margin-left: 6pt;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .tag-open { background: #F5E4DC; color: #84371F; }
+  .tag-done { background: #E8EBE3; color: #5F6A57; }
+  .tag-priority { background: #FEF3C7; color: #92400E; }
+  .tag-progress { background: #DBEAFE; color: #1E40AF; }
+  .tag-question { background: #FBCFE8; color: #9D174D; }
+  .note {
+    display: block;
+    margin-top: 4pt;
+    padding: 6pt 10pt;
+    background: #F0F9FF;
+    border-left: 2pt solid #2563EB;
+    font-size: 9pt;
+    color: #1E3A8A;
+  }
+  .note strong { color: #1E40AF; }
+  footer {
+    margin-top: 30pt;
+    padding-top: 12pt;
+    border-top: 1px solid #E5E7EB;
+    font-size: 8.5pt;
+    color: #6B7280;
+    text-align: center;
+  }
+  .legend {
+    font-size: 9pt;
+    color: #6B7280;
+    margin-top: 6pt;
+  }
+  .legend span { margin-right: 14pt; }
+  .legend .box {
+    display: inline-block; width: 9pt; height: 9pt;
+    vertical-align: middle; margin-right: 4pt;
+    border-radius: 2pt;
+  }
+  .legend .box-open { border: 1.5pt solid #B85742; background: #fff; }
+  .legend .box-done { background: #7A8471; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Cumia Putzsystem · Website-Projekt</div>
+  <h1>Offene Punkte vom Kunden</h1>
+  <div class="meta">Stand: 22.05.2026 · Erstellt von Jonas Tonn</div>
+  <div class="legend">
+    <span><span class="box box-open"></span> Offen</span>
+    <span><span class="box box-done"></span> Erledigt</span>
+    <span><span class="box" style="background:#DBEAFE;border:1.5pt solid #1E40AF;"></span> In Bearbeitung</span>
+    <span><span class="box" style="background:#FBCFE8;border:1.5pt solid #9D174D;"></span> Klärung nötig</span>
+  </div>
+</header>
+
+<div class="intro">
+  Diese Liste enthält alle Informationen, die wir noch vom Kunden (Giuseppe Cumia) benötigen, um die Website fertigzustellen. Sobald ein Punkt eingebaut ist, wird er hier als erledigt markiert. Update vom 22.05.2026: Erste Anpassungen aus dem Kunden-Feedback (PDF-Notizen) sind eingearbeitet.
+</div>
+
+<div class="note" style="margin-bottom:18pt;">
+  <strong>Wichtigste offene Klärung:</strong> Kunde nennt als Wunschdomain <em>cumia-putzwerk.de</em>. Auf der Seite steht aktuell „Cumia Putzsystem". Bitte mit dem Kunden abklären, ob auch der Brand-Name auf „Cumia Putzwerk" umgestellt werden soll.
+</div>
+
+<h2>Kontaktdaten &amp; Firmensitz</h2>
+<ul class="checklist">
+  <li class="done">
+    <span class="label">Firmensitz / Geschäftsadresse <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">Halstenbacher Str. 3a, 51645 Gummersbach, eingebaut in Footer und Kontakt-Sektion. (Kunden-Notiz im PDF.)</span>
+  </li>
+  <li>
+    <span class="label">Telefonnummer <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">0178 9455 038 ist eingebaut (Header, Kontakt, Footer als klickbarer Link). Zweite Nummer (vermutlich Festnetz) folgt laut Kunde noch.</span>
+  </li>
+  <li>
+    <span class="label">WhatsApp-Business-Nummer <span class="tag tag-open">Offen</span></span>
+    <span class="desc">Kunde liefert die Nummer noch nach („Perri"). Aktuell verlinkt der WhatsApp-Button noch auf eine Platzhalter-Nummer.</span>
+  </li>
+  <li>
+    <span class="label">E-Mail-Adresse <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Footer zeigt aktuell „E-Mail folgt". Eine neue gemeinsame Adresse wird laut Jonas erstellt.</span>
+  </li>
+  <li class="done">
+    <span class="label">Verbindliche Geschäftszeiten <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">Mo – Sa, 8:00 – 19:00 Uhr, eingebaut. Sonntag bisher ausgeschlossen; sollte beim nächsten Gespräch finalisiert werden.</span>
+  </li>
+</ul>
+
+<h2>Inhaltliche Texte &amp; Positionierung</h2>
+<ul class="checklist">
+  <li class="done">
+    <span class="label">Einsatzgebiet <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">Bergischer Kreis, Köln, Köln-Leverkusen, Lüdenscheid, Herscheid, eingebaut. Hürth wurde als „nicht im Einsatzgebiet" gekennzeichnet.</span>
+  </li>
+  <li class="done">
+    <span class="label">Leistungsspektrum mit Lehm- und Kalkputz-Fokus <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">Vier Leistungssäulen: Innenputz inkl. Lehm-/Kalkputz (Spezialisierung), Fassade &amp; Fachwerk, Akustiklösungen, Professionelle Beratung.</span>
+  </li>
+  <li class="done">
+    <span class="label">Detailtexte zu Lehm- und Kalkputz <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">Eingesetzte Systeme laut Kunde: Claytec, Hessler, Haga und Otterbein-Naturkalkstoffe, in der Leistungs-Säule und im Über-uns-Text eingebaut.</span>
+  </li>
+  <li>
+    <span class="label">Werdegang &amp; Persönliches <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">„Über 35 Jahre Erfahrung in Altbausanierung" ist in den Über-uns-Text und in die Eckdaten-Karte eingebaut. Weitere Details (Ausbildungsweg, italienische Wurzeln) sind noch nicht geliefert.</span>
+  </li>
+  <li class="done">
+    <span class="label">Zertifizierungen, Mitgliedschaften <span class="tag tag-done">Erledigt</span></span>
+    <span class="desc">„Mitglied Handwerkskammer + Stuckateurinnung Köln" eingebaut (Trust-Bar im Hero, Eckdaten-Karte). Auszeichnungen oder Schulungszertifikate eines Lehmputz-Herstellers wären optionale Erweiterungen.</span>
+  </li>
+</ul>
+
+<h2>Referenzen</h2>
+<ul class="checklist">
+  <li>
+    <span class="label">Kindergarten Bielstein, Fotos &amp; Beschreibung <span class="tag tag-priority">Wichtig</span><span class="tag tag-open">Offen</span></span>
+    <span class="desc">Echte Projektfotos (vorher/nachher wenn möglich), Jahr, Putzsystem. Kunde wartet auf Mitarbeiter, der Material liefert.</span>
+  </li>
+  <li>
+    <span class="label">Schloss Mielenforst (Köln-Brück), Fotos &amp; Beschreibung <span class="tag tag-priority">Wichtig</span><span class="tag tag-open">Offen</span></span>
+    <span class="desc">Bilder, Umfang, denkmalgerechte Besonderheiten. Kunde wartet auf Mitarbeiter.</span>
+  </li>
+  <li>
+    <span class="label">Haus in Rüderrot, Fotos &amp; Beschreibung <span class="tag tag-priority">Wichtig</span><span class="tag tag-open">Offen</span></span>
+    <span class="desc">Bilder, Umfang der Fachwerksanierung, Materialien. Kunde wartet auf Mitarbeiter.</span>
+  </li>
+  <li>
+    <span class="label">Weitere Referenzobjekte für die Galerie <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Vom Kunden bisher genannt: alte Fachwerkfassade in Waldbröl, Innenputz in Köln-Brück. Beide sind als Caption in der Masonry-Galerie hinterlegt, Stock-Bilder sind aber noch durch echte Fotos zu ersetzen. Weitere Projekte willkommen.</span>
+  </li>
+  <li>
+    <span class="label">Echte Kundenstimmen / Google-Bewertungen <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Kunde nennt: Herr Thiele, Schloss, Lohmar, 5 Sterne. Soll als Google-Bewertung ausgesprochen werden, sobald die Seite live ist. Die drei aktuellen Testimonial-Kacheln bleiben bis dahin als Beispieldarstellung.</span>
+  </li>
+</ul>
+
+<h2>Bildmaterial</h2>
+<ul class="checklist">
+  <li class="done">
+    <span class="label">Portraitfoto Giuseppe Cumia <span class="tag tag-done">Geklärt</span></span>
+    <span class="desc">Kunde möchte kein Portrait („Will er nicht"). Die Über-uns-Sektion wurde umgebaut: statt Personenfoto eine dunkle „Auf einen Blick"-Karte mit Eckdaten (35+ Jahre, Hersteller, Innung, Standort).</span>
+  </li>
+  <li>
+    <span class="label">Vorher/Nachher-Bildpaar für Hero-Slider <span class="tag tag-open">Offen</span></span>
+    <span class="desc">Kunde liefert nach („kommt noch"). Bis dahin Stock-Material im Slider.</span>
+  </li>
+  <li>
+    <span class="label">Logo in vektorisierter Form (SVG/AI/PDF) <span class="tag tag-question">Klärung</span></span>
+    <span class="desc">Logo.jpg ist eingebaut (Header und Footer). Kunden-Notiz: „PDF Logo aus netz", unklar ob bereits eine PDF-Version vorliegt oder ob er diese im Internet sucht. Bitte nachfragen, ob er die Vektordatei zuschicken kann.</span>
+  </li>
+</ul>
+
+<h2>Rechtliches &amp; Technisches</h2>
+<ul class="checklist">
+  <li>
+    <span class="label">Impressums-Inhalte <span class="tag tag-priority">Wichtig</span><span class="tag tag-open">Offen</span></span>
+    <span class="desc">Kunden-Notiz im PDF nur „?". Anschrift (Halstenbacher Str. 3a, 51645 Gummersbach) und Stuckateurinnung Köln sind bekannt, der Rest fehlt: Rechtsform, USt-IdNr. / Steuernummer, Handwerksrolle-Nr., zuständige Aufsichtsbehörde, Berufshaftpflicht. Bitte gezielt nachfragen, am besten über den Fragebogen.</span>
+  </li>
+  <li>
+    <span class="label">Datenschutzerklärung <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Wird von Jonas neu erstellt („Erstelle ich neu"). Inhalte: Kontaktformular, OpenStreetMap-Embed, WhatsApp-Link, optional Tracking.</span>
+  </li>
+  <li>
+    <span class="label">Ziel-E-Mail für das Kontaktformular <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Jonas erstellt eine neue gemeinsame E-Mail-Adresse für den Kunden und sich, an die Formularanfragen gehen sollen.</span>
+  </li>
+  <li>
+    <span class="label">Social-Media-Profile <span class="tag tag-progress">In Bearbeitung</span></span>
+    <span class="desc">Neues Facebook-Profil wird laut Kunde erstellt. Instagram bisher nicht erwähnt, bitte beim nächsten Kontakt fragen, ob es ein Profil gibt oder das Icon im Footer entfernt werden soll.</span>
+  </li>
+  <li>
+    <span class="label">Wunsch-Domain &amp; Hosting <span class="tag tag-question">Klärung</span></span>
+    <span class="desc">Kunde nennt <strong>cumia-putzwerk.de</strong> als Wunschdomain. <strong>Achtung:</strong> Das ist „Putzwerk", nicht „Putzsystem". Auf der Website steht aktuell überall „Cumia Putzsystem". Bitte klären, ob auch der Markenname auf „Cumia Putzwerk" umgestellt werden soll oder die Domain bewusst abweicht.</span>
+    <span class="note"><strong>Frage an den Kunden:</strong> Soll der Brand-Name auf der Website von „Cumia Putzsystem" zu „Cumia Putzwerk" geändert werden, passend zur Wunschdomain?</span>
+  </li>
+</ul>
+
+<footer>
+  Diese Liste wird laufend gepflegt. Erledigte Punkte werden durchgestrichen und mit „Erledigt"-Marker versehen.
+</footer>
+
+</body>
+</html>

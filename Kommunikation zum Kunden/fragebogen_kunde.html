@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cumia Putzsystem · Fragebogen für den Kunden</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1F2937;
+    line-height: 1.5;
+    font-size: 10.5pt;
+    margin: 0;
+  }
+
+  /* HEADER */
+  header.cover {
+    border-bottom: 2px solid #B85742;
+    padding-bottom: 14pt;
+    margin-bottom: 18pt;
+  }
+  .eyebrow {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B85742;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 28pt;
+    margin: 6pt 0 4pt;
+    color: #1F2937;
+    font-weight: 600;
+  }
+  .meta {
+    font-size: 9pt;
+    color: #6B7280;
+  }
+  .intro {
+    background: #FAF6EF;
+    border-left: 3px solid #B85742;
+    padding: 12pt 14pt;
+    font-size: 9.5pt;
+    margin-bottom: 18pt;
+    color: #374151;
+  }
+  .intro strong { color: #1F2937; }
+  .intro ol { margin: 8pt 0 0 16pt; padding: 0; }
+  .intro li { margin-bottom: 3pt; }
+
+  /* SECTIONS */
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 18pt;
+    margin: 26pt 0 4pt;
+    color: #1F2937;
+    font-weight: 600;
+    page-break-after: avoid;
+  }
+  h2 .num {
+    color: #B85742;
+    margin-right: 8pt;
+    font-weight: 700;
+  }
+  .section-lead {
+    font-size: 9pt;
+    color: #6B7280;
+    margin: 0 0 14pt;
+    font-style: italic;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 8pt;
+  }
+
+  /* FIELDS */
+  .field {
+    margin-bottom: 14pt;
+    page-break-inside: avoid;
+  }
+  .field-label {
+    display: block;
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 10pt;
+    margin-bottom: 4pt;
+  }
+  .field-hint {
+    display: block;
+    font-size: 8.5pt;
+    color: #6B7280;
+    margin-bottom: 5pt;
+    font-style: italic;
+  }
+  .field input[type="text"],
+  .field textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #B85742;
+    background: #FAF6EF;
+    padding: 8pt 10pt;
+    font-family: inherit;
+    font-size: 10pt;
+    color: #1F2937;
+    border-radius: 3pt 3pt 0 0;
+    box-shadow: inset 0 -2pt 0 #FBF4F1;
+  }
+  .field textarea {
+    min-height: 64pt;
+    resize: vertical;
+    line-height: 1.55;
+  }
+  .field-row {
+    display: flex;
+    gap: 12pt;
+    margin-bottom: 14pt;
+  }
+  .field-row .field {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  /* CHECKBOX */
+  .checkbox-group {
+    display: flex;
+    gap: 18pt;
+    align-items: center;
+    margin-top: 4pt;
+  }
+  .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7pt;
+    font-size: 10pt;
+    color: #1F2937;
+    cursor: pointer;
+  }
+  .checkbox-group .box {
+    display: inline-block;
+    width: 12pt;
+    height: 12pt;
+    border: 1.5pt solid #B85742;
+    border-radius: 2pt;
+    background: #ffffff;
+  }
+
+  /* REFERENZ-CARDS */
+  .ref-card {
+    background: #FAF6EF;
+    border: 1pt solid #EBE1CF;
+    border-radius: 4pt;
+    padding: 12pt 14pt;
+    margin-bottom: 14pt;
+    page-break-inside: avoid;
+  }
+  .ref-card h3 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 14pt;
+    margin: 0 0 8pt;
+    color: #B85742;
+    font-weight: 600;
+  }
+  .ref-card .field input,
+  .ref-card .field textarea {
+    background: #ffffff;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 30pt;
+    padding-top: 12pt;
+    border-top: 1px solid #E5E7EB;
+    font-size: 8.5pt;
+    color: #6B7280;
+    text-align: center;
+  }
+
+  /* PRINT */
+  @media print {
+    .field input[type="text"],
+    .field textarea {
+      background: #ffffff;
+      border-bottom: 1pt solid #1F2937;
+      box-shadow: none;
+    }
+    .ref-card { background: #ffffff; border-color: #D1D5DB; }
+    .intro { background: #ffffff; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="eyebrow">Cumia Putzsystem · Website-Projekt</div>
+  <h1>Fragebogen für den Kunden</h1>
+  <div class="meta">Stand: 21.05.2026 · Erstellt von Jonas Tonn</div>
+</header>
+
+<div class="intro">
+  <strong>So füllst du diesen Fragebogen aus:</strong>
+  <ol>
+    <li><strong>Direkt am Mac in der HTML-Datei:</strong> Doppelklick auf <em>fragebogen_kunde.html</em>, in alle Felder direkt im Browser tippen, dann „Drucken &gt; Als PDF sichern".</li>
+    <li><strong>Im PDF-Viewer (Preview / Acrobat):</strong> PDF öffnen, Werkzeuge &gt; Anmerken &gt; Text, dann in die Felder klicken und schreiben.</li>
+    <li><strong>Auf Papier:</strong> Ausdrucken, handschriftlich ausfüllen, einscannen oder abfotografieren.</li>
+  </ol>
+  Es ist nicht schlimm, wenn manche Felder leer bleiben oder du nur Stichworte einträgst. Das hilft uns trotzdem weiter.
+</div>
+
+<h2><span class="num">1.</span>Kontaktdaten</h2>
+<p class="section-lead">Die wichtigsten Erreichbarkeiten für die Website (Footer, Kontaktbereich, Impressum).</p>
+
+<div class="field">
+  <label class="field-label">Vollständige Geschäftsadresse</label>
+  <span class="field-hint">Straße + Hausnummer, PLZ, Ort</span>
+  <textarea name="adresse" rows="2"></textarea>
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">Festnetznummer</label>
+    <input type="text" name="festnetz" />
+  </div>
+  <div class="field">
+    <label class="field-label">Mobil- / WhatsApp-Nummer</label>
+    <input type="text" name="mobil" />
+  </div>
+</div>
+
+<div class="field">
+  <label class="field-label">E-Mail-Adresse für Anfragen</label>
+  <span class="field-hint">Soll <em>info@cumia-putzsystem.de</em> übernommen werden, oder anders?</span>
+  <input type="text" name="email" />
+</div>
+
+<div class="field">
+  <label class="field-label">Geschäftszeiten</label>
+  <span class="field-hint">Aktuell hinterlegt: Mo bis Sa, 8:00 bis 19:00 Uhr. Bitte bestätigen oder anpassen.</span>
+  <input type="text" name="zeiten" value="Mo – Sa, 8:00 – 19:00 Uhr" />
+</div>
+
+<h2><span class="num">2.</span>Über Giuseppe Cumia</h2>
+<p class="section-lead">Material für den „Über uns"-Bereich. Persönliche Geschichte verkauft besser als jede Werbephrase.</p>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">Vor- und Nachname</label>
+    <input type="text" name="name" value="Giuseppe Cumia" />
+  </div>
+  <div class="field">
+    <label class="field-label">Geburtsort / Herkunft</label>
+    <input type="text" name="herkunft" />
+  </div>
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">Jahr der Meisterprüfung</label>
+    <input type="text" name="meister_jahr" />
+  </div>
+  <div class="field">
+    <label class="field-label">Jahr der Betriebsgründung</label>
+    <input type="text" name="gruendung_jahr" />
+  </div>
+</div>
+
+<div class="field">
+  <label class="field-label">Ausbildung und Stationen im Werdegang</label>
+  <span class="field-hint">Stichpunkte reichen: Ausbildung wo, wann, bei wem; wichtige berufliche Stationen, Spezialschulungen.</span>
+  <textarea name="werdegang" rows="5"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Warum Lehm- und Kalkputz?</label>
+  <span class="field-hint">Was hat dich zu ökologischen Putzsystemen gebracht? Eine persönliche Geschichte hilft.</span>
+  <textarea name="motivation" rows="4"></textarea>
+</div>
+
+<h2><span class="num">3.</span>Materialien und Systeme</h2>
+<p class="section-lead">Stoff für die Detailtexte zu deiner Spezialisierung.</p>
+
+<div class="field">
+  <label class="field-label">Lehmputz-Hersteller, mit denen du arbeitest</label>
+  <span class="field-hint">z.&nbsp;B. Claytec, Conluto, Lesando, Levita. Mehrere möglich.</span>
+  <textarea name="lehmputz_hersteller" rows="2"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Kalkputz-Hersteller, mit denen du arbeitest</label>
+  <span class="field-hint">z.&nbsp;B. Hessler, Haga, Otterbein, Kreidezeit.</span>
+  <textarea name="kalkputz_hersteller" rows="2"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Schulungen und Zertifikate für diese Systeme</label>
+  <span class="field-hint">Hersteller-Verarbeiterzertifikat? Lehmbauer-Ausbildung? Spezialfortbildungen?</span>
+  <textarea name="schulungen" rows="3"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Welche Materialeigenschaften möchtest du auf der Seite besonders betonen?</label>
+  <span class="field-hint">z.&nbsp;B. diffusionsoffen, schadstoffbindend, feuchtigkeitsregulierend, vollständig recyclebar, regional gewonnen.</span>
+  <textarea name="material_argumente" rows="4"></textarea>
+</div>
+
+<h2><span class="num">4.</span>Hauptreferenzen</h2>
+<p class="section-lead">Drei Karten, drei kurze Steckbriefe. Falls Fotos schon digital vorliegen, gerne separat schicken (E-Mail oder WhatsApp).</p>
+
+<div class="ref-card">
+  <h3>Kindergarten Bielstein</h3>
+  <div class="field-row">
+    <div class="field">
+      <label class="field-label">Jahr der Ausführung</label>
+      <input type="text" name="ref1_jahr" />
+    </div>
+    <div class="field">
+      <label class="field-label">Umfang (m² / Räume)</label>
+      <input type="text" name="ref1_umfang" />
+    </div>
+  </div>
+  <div class="field">
+    <label class="field-label">Eingesetztes Putzsystem / Material</label>
+    <input type="text" name="ref1_material" />
+  </div>
+  <div class="field">
+    <label class="field-label">Besonderheit / kurze Beschreibung</label>
+    <textarea name="ref1_beschreibung" rows="3"></textarea>
+  </div>
+  <div class="field">
+    <label class="field-label">Freigabe vom Auftraggeber zur Veröffentlichung</label>
+    <div class="checkbox-group">
+      <label><span class="box"></span> Ja, liegt vor</label>
+      <label><span class="box"></span> Muss noch eingeholt werden</label>
+      <label><span class="box"></span> Nur ohne Namensnennung</label>
+    </div>
+  </div>
+</div>
+
+<div class="ref-card">
+  <h3>Schloss Mielenforst, Köln-Brück</h3>
+  <div class="field-row">
+    <div class="field">
+      <label class="field-label">Jahr der Ausführung</label>
+      <input type="text" name="ref2_jahr" />
+    </div>
+    <div class="field">
+      <label class="field-label">Umfang (m² / Räume)</label>
+      <input type="text" name="ref2_umfang" />
+    </div>
+  </div>
+  <div class="field">
+    <label class="field-label">Eingesetztes Putzsystem / Material</label>
+    <input type="text" name="ref2_material" />
+  </div>
+  <div class="field">
+    <label class="field-label">Besonderheit / denkmalgerechte Aspekte</label>
+    <textarea name="ref2_beschreibung" rows="3"></textarea>
+  </div>
+  <div class="field">
+    <label class="field-label">Freigabe vom Eigentümer zur Veröffentlichung</label>
+    <div class="checkbox-group">
+      <label><span class="box"></span> Ja, liegt vor</label>
+      <label><span class="box"></span> Muss noch eingeholt werden</label>
+      <label><span class="box"></span> Nur ohne Namensnennung</label>
+    </div>
+  </div>
+</div>
+
+<div class="ref-card">
+  <h3>Haus in Rüderrot</h3>
+  <div class="field-row">
+    <div class="field">
+      <label class="field-label">Jahr der Ausführung</label>
+      <input type="text" name="ref3_jahr" />
+    </div>
+    <div class="field">
+      <label class="field-label">Umfang (m² / Räume / Fassade)</label>
+      <input type="text" name="ref3_umfang" />
+    </div>
+  </div>
+  <div class="field">
+    <label class="field-label">Eingesetztes Putzsystem / Material</label>
+    <input type="text" name="ref3_material" />
+  </div>
+  <div class="field">
+    <label class="field-label">Besonderheit / Fachwerk-Details</label>
+    <textarea name="ref3_beschreibung" rows="3"></textarea>
+  </div>
+  <div class="field">
+    <label class="field-label">Freigabe vom Eigentümer zur Veröffentlichung</label>
+    <div class="checkbox-group">
+      <label><span class="box"></span> Ja, liegt vor</label>
+      <label><span class="box"></span> Muss noch eingeholt werden</label>
+      <label><span class="box"></span> Nur ohne Namensnennung</label>
+    </div>
+  </div>
+</div>
+
+<h2><span class="num">5.</span>Weitere Referenzen für die Galerie</h2>
+<p class="section-lead">Liste mit weiteren Projekten, die wir als kleinere Tiles in der Galerie zeigen können. Ort, Jahr und kurze Bezeichnung reichen.</p>
+
+<div class="field">
+  <label class="field-label">Liste weiterer Projekte (eines pro Zeile)</label>
+  <span class="field-hint">Beispielzeile: 2024, Bergisch Gladbach, Lehmputz im Wohnzimmer, 45 m².</span>
+  <textarea name="weitere_referenzen" rows="8"></textarea>
+</div>
+
+<h2><span class="num">6.</span>Bewertungen und Social Media</h2>
+<p class="section-lead">Damit wir echten Social Proof statt Beispiel-Testimonials auf der Seite zeigen können.</p>
+
+<div class="field">
+  <label class="field-label">Google-Business-Profil</label>
+  <span class="field-hint">Link zum Profil oder Hinweis „nicht vorhanden, soll angelegt werden".</span>
+  <input type="text" name="google_business" />
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">Instagram-Profil (Link)</label>
+    <input type="text" name="instagram" />
+  </div>
+  <div class="field">
+    <label class="field-label">Facebook-Profil (Link)</label>
+    <input type="text" name="facebook" />
+  </div>
+</div>
+
+<div class="field">
+  <label class="field-label">Andere Plattformen</label>
+  <span class="field-hint">z.&nbsp;B. MyHammer, ProvenExpert, LinkedIn, YouTube.</span>
+  <input type="text" name="andere_plattformen" />
+</div>
+
+<div class="field">
+  <label class="field-label">Kunden, die wir für ein Testimonial-Zitat anfragen dürften</label>
+  <span class="field-hint">Name, Ort, kurzer Projektbezug. Eine Zeile pro Kunde reicht.</span>
+  <textarea name="testimonial_kunden" rows="5"></textarea>
+</div>
+
+<h2><span class="num">7.</span>Pflichtangaben für das Impressum</h2>
+<p class="section-lead">Reine Datenangaben, die laut §5 TMG auf der Seite stehen müssen. Wir formulieren daraus den fertigen Impressums-Text.</p>
+
+<div class="field">
+  <label class="field-label">Vollständiger Firmenname (wie eingetragen)</label>
+  <input type="text" name="firmenname" />
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">Rechtsform</label>
+    <span class="field-hint">Einzelunternehmen, GmbH, GbR ?</span>
+    <input type="text" name="rechtsform" />
+  </div>
+  <div class="field">
+    <label class="field-label">Verantwortlich für Inhalte</label>
+    <input type="text" name="verantwortlich" />
+  </div>
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label class="field-label">USt-IdNr.</label>
+    <span class="field-hint">Format DE...</span>
+    <input type="text" name="ust_idnr" />
+  </div>
+  <div class="field">
+    <label class="field-label">Steuernummer (alternativ)</label>
+    <input type="text" name="steuernr" />
+  </div>
+</div>
+
+<div class="field">
+  <label class="field-label">Eintrag Handwerkskammer</label>
+  <span class="field-hint">Welche Handwerkskammer (z.&nbsp;B. HWK Köln, HWK Düsseldorf, HWK Südwestfalen)? Mit Registernummer falls vorhanden.</span>
+  <input type="text" name="hwk" />
+</div>
+
+<div class="field">
+  <label class="field-label">Berufsbezeichnung und Land der Verleihung</label>
+  <span class="field-hint">z.&nbsp;B. „Stuckateurmeister, verliehen in der Bundesrepublik Deutschland".</span>
+  <input type="text" name="berufsbezeichnung" />
+</div>
+
+<div class="field">
+  <label class="field-label">Zuständige Aufsichtsbehörde</label>
+  <input type="text" name="aufsichtsbehoerde" />
+</div>
+
+<div class="field">
+  <label class="field-label">Berufshaftpflichtversicherung</label>
+  <span class="field-hint">Anbietername und örtlicher Geltungsbereich (für freiwillige Angabe im Impressum).</span>
+  <input type="text" name="versicherung" />
+</div>
+
+<h2><span class="num">8.</span>Domain, Slogan und USP</h2>
+<p class="section-lead">Letzte Bausteine fürs Branding und die Außenwirkung.</p>
+
+<div class="field">
+  <label class="field-label">Wunschdomain</label>
+  <span class="field-hint">Aktuell platziert: cumia-putzsystem.de. Bereits gesichert? Alternativen?</span>
+  <input type="text" name="domain" />
+</div>
+
+<div class="field">
+  <label class="field-label">Slogan oder Claim</label>
+  <span class="field-hint">Falls es einen bestehenden Spruch gibt, der nicht nur auf dem Logo steht.</span>
+  <input type="text" name="slogan" />
+</div>
+
+<div class="field">
+  <label class="field-label">Was unterscheidet euch von einem klassischen Stuckateurbetrieb?</label>
+  <span class="field-hint">Stichworte reichen. Familienbetrieb? Eigene Mischung von Materialien? Italienische Schule? Eigenes Schulungsangebot?</span>
+  <textarea name="usp" rows="4"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Fördergelder, die ihr für Bauherren mit abbildet</label>
+  <span class="field-hint">z.&nbsp;B. KfW-Programme, BAFA, Denkmal-Förderungen. Wofür konkret? Soll das auf der Seite erwähnt werden?</span>
+  <textarea name="foerder" rows="3"></textarea>
+</div>
+
+<div class="field">
+  <label class="field-label">Sonstige Wünsche, Hinweise oder Ideen</label>
+  <textarea name="sonstiges" rows="5"></textarea>
+</div>
+
+<footer>
+  Vielen Dank fürs Ausfüllen. Bitte zurück an: jonas.tonn.jt@gmail.com — gerne auch nur als Foto vom ausgefüllten Ausdruck.
+</footer>
+
+</body>
+</html>

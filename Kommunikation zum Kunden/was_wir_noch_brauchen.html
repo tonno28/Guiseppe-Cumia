@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cumia Putzsystem · Was wir noch brauchen</title>
+<style>
+  @page { size: A4; margin: 22mm 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1F2937;
+    line-height: 1.55;
+    font-size: 11pt;
+    margin: 0;
+  }
+  header {
+    border-bottom: 2px solid #B85742;
+    padding-bottom: 14pt;
+    margin-bottom: 22pt;
+  }
+  .eyebrow {
+    font-size: 8.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B85742;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 26pt;
+    margin: 6pt 0 4pt;
+    color: #1F2937;
+    font-weight: 600;
+  }
+  .meta {
+    font-size: 9pt;
+    color: #6B7280;
+  }
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 16pt;
+    margin: 24pt 0 8pt;
+    color: #1F2937;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 4pt;
+    font-weight: 600;
+  }
+  h2 .count {
+    float: right;
+    font-family: -apple-system, "Helvetica Neue", sans-serif;
+    font-size: 10pt;
+    color: #B85742;
+    font-weight: 600;
+    background: #FBF4F1;
+    padding: 2pt 9pt;
+    border-radius: 9pt;
+    margin-top: 3pt;
+  }
+  .intro {
+    background: #FAF6EF;
+    border-left: 3px solid #B85742;
+    padding: 12pt 14pt;
+    font-size: 10pt;
+    margin-bottom: 8pt;
+    color: #374151;
+  }
+  .intro strong { color: #1F2937; }
+  .section-lead {
+    font-size: 9.5pt;
+    color: #6B7280;
+    margin: 0 0 10pt;
+    font-style: italic;
+  }
+  ul.items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.items li {
+    padding: 10pt 0 10pt 30pt;
+    position: relative;
+    border-bottom: 1px dashed #E5E7EB;
+  }
+  ul.items li:last-child { border-bottom: none; }
+  ul.items li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13pt;
+    width: 14pt;
+    height: 14pt;
+    border: 1.5pt solid #B85742;
+    border-radius: 3pt;
+    background: #ffffff;
+  }
+  ul.items li.priority::before {
+    border-color: #B85742;
+    background: #FBF4F1;
+  }
+  .label {
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 10.5pt;
+  }
+  .desc {
+    display: block;
+    font-size: 9.5pt;
+    color: #4B5563;
+    margin-top: 3pt;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 7.5pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1pt 7pt;
+    border-radius: 8pt;
+    margin-left: 8pt;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .badge-prio { background: #B85742; color: #ffffff; }
+  .badge-nice { background: #F5EFE6; color: #6B7280; }
+  .badge-empfehlung { background: #E8EBE3; color: #5F6A57; }
+  .question {
+    display: block;
+    font-size: 9.5pt;
+    color: #84371F;
+    margin-top: 4pt;
+    font-style: italic;
+  }
+  .question::before {
+    content: "→  ";
+    color: #B85742;
+    font-style: normal;
+    font-weight: 700;
+  }
+  footer {
+    margin-top: 30pt;
+    padding-top: 12pt;
+    border-top: 1px solid #E5E7EB;
+    font-size: 8.5pt;
+    color: #6B7280;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Cumia Putzsystem · Website-Projekt</div>
+  <h1>Was wir noch brauchen</h1>
+  <div class="meta">Stand: 21.05.2026 · Erstellt von Jonas Tonn</div>
+</header>
+
+<div class="intro">
+  Diese Übersicht listet nur das, was wir aktuell noch vom Kunden benötigen oder wo wir Klärung brauchen, um die Website fertigzustellen. Erledigte Punkte sind bewusst ausgeblendet. Die vollständige Liste mit allem inkl. erledigtem Stand findet sich in <strong>offene_punkte.pdf</strong>.
+</div>
+
+<h2>1. Kontakt &amp; Standort <span class="count">4 offen</span></h2>
+<p class="section-lead">Damit Anrufer, Mailer und Suchmaschinen wissen, wo der Betrieb sitzt und wie man ihn erreicht.</p>
+<ul class="items">
+  <li class="priority">
+    <span class="label">Firmensitz / Geschäftsadresse <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Vollständige Anschrift für Footer, Impressum und Kontakt-Sektion. Ohne diese Angabe ist die Seite rechtlich nicht live-fähig.</span>
+  </li>
+  <li class="priority">
+    <span class="label">Telefonnummer <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Festnetz oder Mobil, für Erstgespräche und Call-Buttons. Aktuell überall als „Nummer folgt" platziert.</span>
+    <span class="question">Soll die gleiche Nummer für Festnetz und WhatsApp genutzt werden, oder gibt es zwei verschiedene?</span>
+  </li>
+  <li>
+    <span class="label">WhatsApp-Business-Nummer <span class="badge badge-nice">Wenn vorhanden</span></span>
+    <span class="desc">Für den schwebenden Chat-Button und die Kontakt-Sektion.</span>
+  </li>
+  <li>
+    <span class="label">E-Mail-Adresse <span class="badge badge-nice">Bestätigen</span></span>
+    <span class="desc">Aktuell als Platzhalter <em>info@cumia-putzsystem.de</em> hinterlegt. Stimmt die Adresse?</span>
+    <span class="question">An welche Adresse sollen Anfragen aus dem Kontaktformular gehen?</span>
+  </li>
+</ul>
+
+<h2>2. Inhalte &amp; Texte <span class="count">3 offen</span></h2>
+<p class="section-lead">Texte, die aktuell auf Platzhalter-Niveau sind und durch echte Aussagen des Kunden ersetzt werden sollten.</p>
+<ul class="items">
+  <li>
+    <span class="label">Detailtexte zu Lehm- und Kalkputz</span>
+    <span class="desc">Konkrete Systeme oder Hersteller, mit denen Cumia bevorzugt arbeitet (z.&nbsp;B. Claytec, Hessler, Haga, Conluto).</span>
+    <span class="question">Welche Materialeigenschaften möchte der Kunde besonders hervorheben?</span>
+    <span class="question">Gibt es konkrete Beispiele oder Argumentationen, warum sich Bauherren für ökologische Putzsysteme entscheiden sollten?</span>
+  </li>
+  <li>
+    <span class="label">Werdegang Giuseppe Cumia</span>
+    <span class="desc">Persönliche Geschichte, Ausbildung, italienische Wurzeln, Meisterprüfung, Berufsjahre. Aktuell auf Platzhalter-Narrativ.</span>
+    <span class="question">Wann hat der Betrieb angefangen? Gibt es eine besondere Geschichte zum Einstieg in Lehm und Kalk?</span>
+  </li>
+  <li>
+    <span class="label">Zertifizierungen, Mitgliedschaften, Auszeichnungen</span>
+    <span class="desc">Meisterbrief, Innung, Handwerkskammer, Schulungszertifikate (Claytec, Hessler usw.) als Logos / Originaldokumente.</span>
+    <span class="question">Gibt es eine Spezialisten-/Verarbeiter-Zertifizierung eines Lehmputz-Herstellers, die wir sichtbar machen sollten?</span>
+  </li>
+</ul>
+
+<h2>3. Referenzen &amp; Bilder <span class="count">6 offen</span></h2>
+<p class="section-lead">Hier liegt der größte Hebel für die Wirkung der Seite. Die drei Hauptreferenzen wirken erst mit echten Fotos.</p>
+<ul class="items">
+  <li class="priority">
+    <span class="label">Kindergarten Bielstein <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Echte Projektfotos (vorher/nachher wenn möglich), Jahr der Ausführung, eingesetztes Putzsystem, Quadratmeter.</span>
+  </li>
+  <li class="priority">
+    <span class="label">Schloss Mielenforst, Köln-Brück <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Bilder vom Projekt, Umfang der Arbeiten, Besonderheiten der denkmalgerechten Sanierung.</span>
+    <span class="question">Dürfen wir den Namen „Schloss Mielenforst" öffentlich nennen? Existiert eine Freigabe vom Eigentümer?</span>
+  </li>
+  <li class="priority">
+    <span class="label">Haus in Rüderrot <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Bilder, Umfang der Fachwerksanierung, eingesetzte Materialien.</span>
+  </li>
+  <li>
+    <span class="label">Weitere Referenzobjekte für die Galerie</span>
+    <span class="desc">Aktuell sechs Stock-Bilder als Beispieldarstellung. Idealerweise 6 bis 12 weitere echte Cumia-Projektfotos.</span>
+  </li>
+  <li class="priority">
+    <span class="label">Portraitfoto Giuseppe Cumia <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Idealerweise im Arbeitskontext (Baustelle, Material in der Hand). Kein Studio-Portrait.</span>
+  </li>
+  <li>
+    <span class="label">Vorher/Nachher-Bildpaar für den Hero-Slider</span>
+    <span class="desc">Aktuell Stock-Material. Ein eigenes Projekt mit klarer Vorher/Nachher-Wirkung wäre die stärkste Hero-Variante.</span>
+  </li>
+</ul>
+
+<h2>4. Bewertungen &amp; Social Proof <span class="count">2 offen</span></h2>
+<p class="section-lead">Was andere über Cumia sagen, wirkt auf neue Kunden stärker als jeder Selbstaussage-Text.</p>
+<ul class="items">
+  <li>
+    <span class="label">Echte Kundenstimmen</span>
+    <span class="desc">Drei Testimonial-Kacheln stehen als Beispieldarstellung. Idealerweise drei reale Zitate mit Vorname/Initialen, Ort und Projekt-Bezug.</span>
+    <span class="question">Gibt es ein Google-Business-Profil mit Bewertungen, das wir live einbinden können?</span>
+    <span class="question">Falls nicht: Welche Bestandskunden könnten wir um ein Zitat bitten?</span>
+  </li>
+  <li>
+    <span class="label">Social-Media-Profile</span>
+    <span class="desc">Im Footer sind Instagram- und Facebook-Icons verlinkt, aktuell ohne Ziel.</span>
+    <span class="question">Existieren Profile? Sollen sie verlinkt werden oder sollen wir die Icons entfernen?</span>
+  </li>
+</ul>
+
+<h2>5. Rechtliches &amp; Technisches <span class="count">4 offen</span></h2>
+<p class="section-lead">Was zwingend stehen muss, bevor die Seite öffentlich gehen kann.</p>
+<ul class="items">
+  <li class="priority">
+    <span class="label">Impressums-Inhalte <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Inhaber, Anschrift, USt-IdNr., Eintrag Handwerkskammer, zuständige Aufsichtsbehörde, Haftungsausschluss.</span>
+  </li>
+  <li class="priority">
+    <span class="label">Datenschutzerklärung <span class="badge badge-prio">Kritisch</span></span>
+    <span class="desc">Bestehende DSE übernehmen oder neu erstellen. Hinweise zu Kontaktformular, Cookies, eingebundener OpenStreetMap-Karte, WhatsApp-Link.</span>
+  </li>
+  <li>
+    <span class="label">Wunsch-Domain &amp; Hosting</span>
+    <span class="desc">Welche Domain soll genutzt werden? Wo wird gehostet (aktuell nur Vercel-Preview)?</span>
+    <span class="question">Ist <em>cumia-putzsystem.de</em> bereits registriert oder müssen wir die Domain noch prüfen und sichern?</span>
+  </li>
+  <li>
+    <span class="label">Logo in Vektorform (SVG / AI / PDF)</span>
+    <span class="desc">Die JPG-Version ist eingebaut. Für saubere Skalierung (Header in Retina-Größen, Print) brauchen wir die Vektordatei, idealerweise mit transparentem Hintergrund.</span>
+  </li>
+</ul>
+
+<h2>6. Zusätzliche Anforderungen &amp; Empfehlungen <span class="count">7 zu klären</span></h2>
+<p class="section-lead">Punkte, die nicht zwingend sind, die Website aber spürbar stärker machen. Bitte beim Kunden anfragen.</p>
+<ul class="items">
+  <li>
+    <span class="label">Förderhinweise für ökologisches Sanieren <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Bauherren, die Lehm/Kalk wählen, fragen oft nach KfW- oder BAFA-Förderung sowie Denkmal-Förderungen.</span>
+    <span class="question">Möchte der Kunde eine kleine FAQ-Sektion oder einen Hinweisblock dazu auf der Seite haben?</span>
+  </li>
+  <li>
+    <span class="label">USP-Schärfung gegenüber anderen Stuckateuren <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Was unterscheidet Cumia von einem klassischen Stuckateurbetrieb in der Region?</span>
+    <span class="question">Eigene Schulungen? Spezielle Ausbildung in Lehmputz? Familienbetrieb? Italienische Schule?</span>
+  </li>
+  <li>
+    <span class="label">Cookie-Banner / Consent-Tool <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Aktuell wird OpenStreetMap eingebunden, perspektivisch eventuell Analytics. Ein DSGVO-konformer Consent-Banner ist sinnvoll, sobald Drittinhalte laden.</span>
+    <span class="question">Soll Tracking (z.&nbsp;B. Plausible oder Google Analytics) eingebaut werden, oder bleibt die Seite tracking-frei?</span>
+  </li>
+  <li>
+    <span class="label">Google-Business-Profil <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Wichtig für lokale Sichtbarkeit in Bergisches Land, Köln und Sauerland. Auch Voraussetzung für eingebundene Google-Bewertungen.</span>
+    <span class="question">Existiert ein Google-Business-Eintrag? Wenn ja: Zugriff für uns oder soll der Kunde ihn selbst pflegen?</span>
+  </li>
+  <li>
+    <span class="label">Notfall- bzw. Außerhalb-Geschäftszeiten-Hinweis <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Soll die Website kommunizieren, was außerhalb 8 bis 19 Uhr passiert?</span>
+    <span class="question">Anrufbeantworter mit Rückrufversprechen? WhatsApp-Eingang? Oder bewusst offen lassen?</span>
+  </li>
+  <li>
+    <span class="label">Bildrechte und Freigaben <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Bei Referenzfotos von bewohnten Häusern und vor allem beim Kindergarten Bielstein brauchen wir schriftliche Freigaben.</span>
+    <span class="question">Liegen bereits Einverständniserklärungen vor, oder müssen wir ein Musterformular vorbereiten?</span>
+  </li>
+  <li>
+    <span class="label">Inhaltspflege nach Go-Live <span class="badge badge-empfehlung">Empfehlung</span></span>
+    <span class="desc">Wer pflegt nach dem Go-Live neue Referenzen, Texte, eventuell ein Aktuelles-/Blogmodul?</span>
+    <span class="question">Soll ein einfaches CMS-System dazu (z.&nbsp;B. Decap, Sanity, Notion-basiert), oder bleibt es eine statische Seite mit Änderungen über uns?</span>
+  </li>
+</ul>
+
+<footer>
+  Diese Liste ergänzt die offene_punkte.pdf um zusätzliche Anforderungen und Klärungspunkte. Sobald Material vom Kunden eintrifft, wandern die Einträge dort ins „Erledigt"-Set und werden hier entfernt.
+</footer>
+
+</body>
+</html>
