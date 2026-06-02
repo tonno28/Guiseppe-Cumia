@@ -3,12 +3,20 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cumia Putzsystem | Lehm- und Kalkputz · Köln, Bergisches Land & Sauerland</title>
-<meta name="description" content="Cumia Putzsystem, spezialisiert auf ökologische Lehm- und Kalkputzsysteme. Innenputz, Fassade, Fachwerk und Akustiklösungen im Bergischen Kreis, Köln, Leverkusen bis Lüdenscheid und Herscheid." />
+<title>Cumia Putzsystem | Lehm- & Kalkputz · Stuckateurmeister · Köln, Bergisches Land & Sauerland</title>
+<meta name="description" content="Cumia Putzsystem – Stuckateurmeister Giuseppe Cumia. Spezialisiert auf ökologische Lehm- und Kalkputzsysteme: Innenputz, Fassade, Fachwerksanierung und Akustik im Bergischen Kreis, Köln, Leverkusen bis Lüdenscheid und Herscheid." />
+<meta name="theme-color" content="#1F2937" />
+<link rel="icon" href="Logo.jpg" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cumia Putzsystem · Ökologische Lehm- & Kalkputzsysteme" />
+<meta property="og:description" content="Stuckateurmeisterbetrieb für Lehm- und Kalkputz, Fassade, Fachwerk und Akustik. Bergisches Land · Köln · Sauerland." />
+<meta property="og:locale" content="de_DE" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -18,9 +26,9 @@
     theme: {
       extend: {
         colors: {
-          terracotta: { 50: '#FBF4F1', 100: '#F5E4DC', 500: '#B85742', 600: '#A0432B', 700: '#84371F' },
-          sand: { 50: '#FAF6EF', 100: '#F5EFE6', 200: '#EBE1CF' },
-          anthracite: { 700: '#2A3340', 800: '#1F2937', 900: '#111827' },
+          terracotta: { 50: '#FBF4F1', 100: '#F5E4DC', 400: '#C76B54', 500: '#B85742', 600: '#A0432B', 700: '#84371F' },
+          sand: { 50: '#FAF6EF', 100: '#F5EFE6', 200: '#EBE1CF', 300: '#DECBAE' },
+          anthracite: { 700: '#2A3340', 800: '#1F2937', 900: '#111827', 950: '#0B1018' },
           olive: { 500: '#7A8471', 600: '#5F6A57' }
         },
         fontFamily: {
@@ -36,6 +44,15 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', system-ui, sans-serif; color: #1F2937; background: #FAF6EF; }
   h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+
+  /* Sichtbarer Fokus für Tastatur-Navigation (Accessibility) */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid #B85742; outline-offset: 3px; border-radius: 6px;
+  }
+
+  /* Feiner Putz-Texturhintergrund */
+  .plaster-grain { background-image: radial-gradient(circle at 1px 1px, rgba(184,87,66,0.10) 1px, transparent 0); background-size: 26px 26px; }
+  .plaster-grain-light { background-image: radial-gradient(circle at 1px 1px, rgba(250,246,239,0.10) 1px, transparent 0); background-size: 22px 22px; }
 
   .ba-slider { position: relative; user-select: none; overflow: hidden; }
   .ba-slider .after { position: absolute; inset: 0; width: 50%; overflow: hidden; }
@@ -72,27 +89,54 @@
 
   .corner-line::before { content: ''; display: inline-block; width: 32px; height: 1px; background: #B85742; vertical-align: middle; margin-right: 12px; }
   .corner-line::after { content: ''; display: inline-block; width: 32px; height: 1px; background: #B85742; vertical-align: middle; margin-left: 12px; }
+  .corner-line-left::before { content: ''; display: inline-block; width: 32px; height: 1px; background: #B85742; vertical-align: middle; margin-right: 12px; }
+
+  /* Header-Zustände: über Hero transparent, beim Scrollen fest */
+  #siteHeader { transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+  #siteHeader.scrolled { background: rgba(250,246,239,0.92); backdrop-filter: blur(8px); border-bottom-color: #EBE1CF; box-shadow: 0 8px 30px -20px rgba(31,41,55,0.4); }
+  #siteHeader.scrolled .hdr-link { color: #1F2937; }
+  #siteHeader.scrolled .hdr-brand { color: #1F2937; }
+  #siteHeader.scrolled .hdr-sub { color: rgba(42,51,64,0.7); }
+  #siteHeader.scrolled .hdr-burger { border-color: rgba(31,41,55,0.15); color: #1F2937; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
 </style>
 </head>
 <body class="antialiased">
 
-<!-- Sticky Header -->
-<header class="sticky top-0 z-40 backdrop-blur bg-sand-50/85 border-b border-sand-200">
+<a href="#leistungen" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-3 focus:left-3 focus:bg-anthracite-900 focus:text-sand-50 focus:px-4 focus:py-2 focus:rounded-full">Zum Inhalt springen</a>
+
+<!-- Utility-Leiste -->
+<div class="hidden md:block bg-anthracite-900 text-sand-50/80 text-xs">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta-500"></i> Gummersbach · Bergisches Land · Köln · Sauerland</span>
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-terracotta-500"></i> Mo – Sa · 8:00 – 19:00 Uhr</span>
+    </div>
+    <a href="tel:+491789455038" class="inline-flex items-center gap-1.5 hover:text-terracotta-400 transition"><i data-lucide="phone" class="w-3.5 h-3.5 text-terracotta-500"></i> 0178 9455038</a>
+  </div>
+</div>
+
+<!-- Header (über Hero transparent, beim Scrollen fest) -->
+<header id="siteHeader" class="absolute md:fixed left-0 right-0 top-0 md:top-9 z-40 border-b border-transparent">
   <div class="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
     <a href="#" class="flex items-center gap-3">
-      <img src="Logo.jpg" alt="Cumia Putzsystem Logo, Der Stuckateur, Ausbau und Fassade" class="h-14 w-auto" />
+      <img src="Logo.jpg" alt="Cumia Putzsystem – Logo des Stuckateurbetriebs für Ausbau und Fassade" class="h-14 w-auto rounded bg-sand-50/95 p-1" width="56" height="56" />
       <div class="leading-tight">
-        <div class="font-display text-2xl font-semibold text-anthracite-800">Cumia <span class="text-terracotta-500">Putzsystem</span></div>
-        <div class="text-[11px] uppercase tracking-widest text-anthracite-700/70">Lehmputz · Kalkputz · Fassade · Akustik</div>
+        <div class="hdr-brand font-display text-2xl font-semibold text-sand-50">Cumia <span class="text-terracotta-400">Putzsystem</span></div>
+        <div class="hdr-sub text-[11px] uppercase tracking-widest text-sand-50/70">Lehmputz · Kalkputz · Fassade · Akustik</div>
       </div>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-anthracite-800">
-      <a href="#leistungen" class="nav-link">Leistungen</a>
-      <a href="#ueber-uns" class="nav-link">Über uns</a>
-      <a href="#referenzen" class="nav-link">Referenzen</a>
-      <a href="#standorte" class="nav-link">Einzugsgebiet</a>
-      <a href="#kontakt" class="nav-link">Kontakt</a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium" aria-label="Hauptnavigation">
+      <a href="#leistungen" class="hdr-link nav-link text-sand-50">Leistungen</a>
+      <a href="#ueber-uns" class="hdr-link nav-link text-sand-50">Über uns</a>
+      <a href="#referenzen" class="hdr-link nav-link text-sand-50">Referenzen</a>
+      <a href="#standorte" class="hdr-link nav-link text-sand-50">Einzugsgebiet</a>
+      <a href="#kontakt" class="hdr-link nav-link text-sand-50">Kontakt</a>
     </nav>
 
     <div class="flex items-center gap-3">
@@ -100,15 +144,15 @@
         <i data-lucide="phone" class="w-4 h-4"></i>
         0178 9455038
       </a>
-      <button id="hamburger" class="lg:hidden p-2 rounded-md border border-anthracite-800/15" aria-label="Menü öffnen">
+      <button id="hamburger" class="hdr-burger lg:hidden p-2 rounded-md border border-sand-50/30 text-sand-50" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile-Menü -->
   <div id="mobile-menu" class="hidden lg:hidden border-t border-sand-200 bg-sand-50">
-    <nav class="px-4 py-4 flex flex-col gap-1 text-anthracite-800">
+    <nav class="px-4 py-4 flex flex-col gap-1 text-anthracite-800" aria-label="Mobile Navigation">
       <a href="#leistungen" class="py-3 border-b border-sand-200">Leistungen</a>
       <a href="#ueber-uns" class="py-3 border-b border-sand-200">Über uns</a>
       <a href="#referenzen" class="py-3 border-b border-sand-200">Referenzen</a>
@@ -119,20 +163,26 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="relative overflow-hidden bg-sand-50">
-  <div class="max-w-7xl mx-auto px-4 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-2 gap-12 items-center">
-    <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-terracotta-50 text-terracotta-700 text-xs font-semibold uppercase tracking-widest">
-        <span class="w-1.5 h-1.5 rounded-full bg-terracotta-500"></span>
+<!-- HERO – vollflächig, dunkel, editorial -->
+<section class="relative min-h-[88vh] flex items-end overflow-hidden bg-anthracite-900">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+       alt="Frisch verputzte Fassade mit ökologischem Kalkputzsystem von Cumia Putzsystem"
+       class="absolute inset-0 w-full h-full object-cover opacity-45" />
+  <div class="absolute inset-0 bg-gradient-to-t from-anthracite-950 via-anthracite-900/70 to-anthracite-900/30"></div>
+  <div class="absolute inset-0 plaster-grain-light opacity-[0.5] pointer-events-none"></div>
+
+  <div class="relative w-full max-w-7xl mx-auto px-4 lg:px-8 pt-40 pb-16 lg:pb-24">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand-50/10 text-sand-50 text-xs font-semibold uppercase tracking-widest backdrop-blur">
+        <span class="w-1.5 h-1.5 rounded-full bg-terracotta-400"></span>
         Ökologische Putzsysteme · Bergisches Land · Köln · Sauerland
       </div>
-      <h1 class="mt-6 font-display text-5xl lg:text-7xl font-medium leading-[1.05] text-anthracite-800">
+      <h1 class="mt-6 font-display text-5xl lg:text-7xl font-medium leading-[1.04] text-sand-50">
         Handwerk mit Sorgfalt.<br/>
-        <span class="text-terracotta-600 italic">Oberflächen</span> mit Charakter.
+        <span class="text-terracotta-400 italic">Oberflächen</span> mit Charakter.
       </h1>
-      <p class="mt-6 text-lg text-anthracite-700/85 max-w-xl">
-        Spezialisiert auf Lehm- und Kalkputzsysteme, ökologische Materialien für Räume, die gesund atmen. Von der Fachwerkfassade bis zur Akustiklösung. Im Bergischen Kreis, in Köln und Leverkusen bis Lüdenscheid und Herscheid.
+      <p class="mt-6 text-lg text-sand-50/85 max-w-2xl">
+        Stuckateurmeisterbetrieb, spezialisiert auf ökologische Lehm- und Kalkputzsysteme – Materialien für Räume, die gesund atmen. Von der Fachwerkfassade bis zur Akustiklösung. Im Bergischen Kreis, in Köln und Leverkusen bis Lüdenscheid und Herscheid.
       </p>
 
       <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -140,55 +190,50 @@
           Kostenloses Erstgespräch
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
-        <a href="https://wa.me/491571111111" class="btn-ghost rounded-full px-7 py-4 font-semibold flex items-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4 text-olive-600"></i>
-          WhatsApp
+        <a href="tel:+491789455038" class="rounded-full px-7 py-4 font-semibold flex items-center gap-2 border border-sand-50/30 text-sand-50 hover:bg-sand-50/10 transition">
+          <i data-lucide="phone" class="w-4 h-4 text-terracotta-400"></i>
+          0178 9455038
         </a>
       </div>
 
-      <!-- Trust Microbar -->
-      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
-        <div class="flex items-center gap-2 text-xs text-anthracite-700">
-          <i data-lucide="leaf" class="w-5 h-5 text-olive-600"></i>
-          <div><div class="font-semibold">Ökologisch</div><div class="text-anthracite-700/60">Lehm- und Kalkputz</div></div>
+      <!-- Trust-Microbar -->
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 max-w-2xl border-t border-sand-50/15 pt-8">
+        <div class="flex items-center gap-2 text-xs text-sand-50/85">
+          <i data-lucide="leaf" class="w-5 h-5 text-olive-500"></i>
+          <div><div class="font-semibold">Ökologisch</div><div class="text-sand-50/55">Lehm- und Kalkputz</div></div>
         </div>
-        <div class="flex items-center gap-2 text-xs text-anthracite-700">
-          <i data-lucide="award" class="w-5 h-5 text-terracotta-500"></i>
-          <div><div class="font-semibold">Meisterbetrieb</div><div class="text-anthracite-700/60">Stuckateurinnung Köln</div></div>
+        <div class="flex items-center gap-2 text-xs text-sand-50/85">
+          <i data-lucide="award" class="w-5 h-5 text-terracotta-400"></i>
+          <div><div class="font-semibold">Meisterbetrieb</div><div class="text-sand-50/55">Stuckateurinnung Köln</div></div>
         </div>
-        <div class="flex items-center gap-2 text-xs text-anthracite-700">
-          <i data-lucide="map-pin" class="w-5 h-5 text-olive-600"></i>
-          <div><div class="font-semibold">Region</div><div class="text-anthracite-700/60">Bergisches Land · Köln · Sauerland</div></div>
+        <div class="flex items-center gap-2 text-xs text-sand-50/85">
+          <i data-lucide="clock-3" class="w-5 h-5 text-olive-500"></i>
+          <div><div class="font-semibold">35+ Jahre</div><div class="text-sand-50/55">Erfahrung im Altbau</div></div>
         </div>
-        <div class="flex items-center gap-2 text-xs text-anthracite-700">
-          <i data-lucide="hammer" class="w-5 h-5 text-terracotta-500"></i>
-          <div><div class="font-semibold">Fachwerk</div><div class="text-anthracite-700/60">Sanierung mit Tradition</div></div>
+        <div class="flex items-center gap-2 text-xs text-sand-50/85">
+          <i data-lucide="hammer" class="w-5 h-5 text-terracotta-400"></i>
+          <div><div class="font-semibold">Fachwerk</div><div class="text-sand-50/55">Sanierung mit Tradition</div></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Vorher Nachher Slider -->
-    <div class="relative">
-      <div class="absolute -inset-3 bg-terracotta-500/10 rounded-3xl rotate-1"></div>
-      <div id="baSlider" class="ba-slider relative rounded-3xl shadow-2xl aspect-[4/5] lg:aspect-[5/6]">
-        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&q=80"
-             alt="Cumia Putzsystem Beispielprojekt, Fachwerkfassade mit Rissen und Putzabplatzungen vor der ökologischen Sanierung im Bergischen Land"
-             class="absolute inset-0 w-full h-full object-cover rounded-3xl" />
-        <div class="after rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-               alt="Cumia Putzsystem Beispielprojekt, frisch sanierte Fassade mit Kalkputz und ökologischem Putzsystem" />
-        </div>
-        <span class="label ba-label-vorher">Vorher</span>
-        <span class="label ba-label-nachher">Nachher</span>
-        <div id="baHandle" class="handle" aria-label="Vorher Nachher Schieberegler"></div>
-      </div>
-      <p class="mt-3 text-center text-xs text-anthracite-700/60">Beispielhafte Darstellung, im Live Betrieb durch echte Cumia Projektfotos ersetzen.</p>
+<!-- MATERIAL- / PARTNERLEISTE -->
+<section class="bg-sand-100 border-y border-sand-200">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 py-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-8 justify-center text-anthracite-700/70">
+    <span class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta-600 whitespace-nowrap">Wir arbeiten mit</span>
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-display text-xl text-anthracite-800/80">
+      <span>Claytec</span><span class="text-sand-300">·</span>
+      <span>Hessler</span><span class="text-sand-300">·</span>
+      <span>Haga</span><span class="text-sand-300">·</span>
+      <span>Otterbein Naturkalk</span>
     </div>
   </div>
 </section>
 
 <!-- 4 SÄULEN LEISTUNGEN -->
-<section id="leistungen" class="bg-white py-20 lg:py-28">
+<section id="leistungen" class="bg-white py-20 lg:py-28 scroll-mt-32">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="text-center max-w-3xl mx-auto">
       <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Leistungen</p>
@@ -202,8 +247,8 @@
         <div class="w-12 h-12 rounded-xl bg-olive-500/15 text-olive-600 flex items-center justify-center">
           <i data-lucide="leaf" class="w-6 h-6"></i>
         </div>
-        <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Innenputz und Spachteltechniken</h3>
-        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Unsere Kernkompetenz: ökologische Lehm- und Kalkputzsysteme, diffusionsoffen, baubiologisch hochwertig, klimaregulierend. Wir arbeiten mit Claytec, Hessler, Haga und Otterbein-Naturkalkstoffen. Dazu klassische Innenputze, mineralische Edelputze und dekorative Spachteltechniken, im Altbau wie im Neubau.</p>
+        <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Innenputz & Spachteltechniken</h3>
+        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Unsere Kernkompetenz: ökologische Lehm- und Kalkputzsysteme – diffusionsoffen, baubiologisch hochwertig, klimaregulierend. Wir arbeiten mit Claytec-, Hessler-, Haga- und Otterbein-Naturkalkstoffen. Dazu klassische Innenputze, mineralische Edelputze und dekorative Spachteltechniken, im Altbau wie im Neubau.</p>
         <a href="#kontakt" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-terracotta-600 hover:text-terracotta-700">
           Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -213,7 +258,7 @@
         <div class="w-12 h-12 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center">
           <i data-lucide="home" class="w-6 h-6"></i>
         </div>
-        <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Fassade und Fachwerksanierung</h3>
+        <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Fassade & Fachwerksanierung</h3>
         <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Außenputz, mineralische Edelputze und behutsame Fachwerksanierung. Wir verstehen historische Konstruktionen und arbeiten mit den richtigen Materialien, damit die Fassade atmet und Generationen überdauert.</p>
         <a href="#kontakt" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-terracotta-600 hover:text-terracotta-700">
           Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -225,7 +270,7 @@
           <i data-lucide="audio-lines" class="w-6 h-6"></i>
         </div>
         <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Akustiklösungen</h3>
-        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Ruhige Räume für Büros, Praxen, Restaurants und Wohnbereiche, mit Akustikputz und akustisch wirksamen Oberflächen, die wie klassischer Putz aussehen. Keine Industrieoptik, sondern stille Eleganz.</p>
+        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Ruhige Räume für Büros, Praxen, Restaurants und Wohnbereiche – mit Akustikputz und akustisch wirksamen Oberflächen, die wie klassischer Putz aussehen. Keine Industrieoptik, sondern stille Eleganz.</p>
         <a href="#kontakt" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-terracotta-600 hover:text-terracotta-700">
           Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -236,7 +281,7 @@
           <i data-lucide="messages-square" class="w-6 h-6"></i>
         </div>
         <h3 class="mt-5 text-2xl font-semibold text-anthracite-800">Professionelle Beratung</h3>
-        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Bevor Material gewählt wird, wird zugehört. Wir beraten ehrlich zu Putzsystemen, ökologischen Materialien, Konstruktion und Sanierungsfragen, auch wenn der richtige Weg nicht der teuerste ist. Ein klares Wort vor dem ersten Quadratmeter.</p>
+        <p class="mt-3 text-sm text-anthracite-700/80 leading-relaxed">Bevor Material gewählt wird, wird zugehört. Wir beraten ehrlich zu Putzsystemen, ökologischen Materialien, Konstruktion und Sanierungsfragen – auch wenn der richtige Weg nicht der teuerste ist. Ein klares Wort vor dem ersten Quadratmeter.</p>
         <a href="#kontakt" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-terracotta-600 hover:text-terracotta-700">
           Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -246,28 +291,31 @@
 </section>
 
 <!-- ÜBER UNS -->
-<section id="ueber-uns" class="bg-sand-50 py-20 lg:py-28 relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, #B85742 1px, transparent 0); background-size: 28px 28px;"></div>
+<section id="ueber-uns" class="bg-sand-50 py-20 lg:py-28 relative overflow-hidden scroll-mt-32">
+  <div class="absolute inset-0 pointer-events-none plaster-grain opacity-[0.5]"></div>
 
   <div class="relative max-w-5xl mx-auto px-4 lg:px-8">
     <div class="text-center max-w-2xl mx-auto">
       <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Inhaber</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Giuseppe Cumia.</h2>
       <p class="mt-3 text-anthracite-700/80 text-lg">Stuckateurmeister mit Spezialisierung auf ökologische Putzsysteme.</p>
+      <p class="mt-5 text-anthracite-700/75 leading-relaxed">
+        Über 35 Jahre am Bau, davon der größte Teil im Altbau und an historischer Substanz. Italienische Handwerkstradition trifft auf ökologisches Bauen – ein Anspruch, der sich in jeder Oberfläche zeigt: ehrlich beraten, sauber ausgeführt, termintreu übergeben.
+      </p>
     </div>
 
     <div class="mt-14 max-w-2xl mx-auto">
       <div class="relative">
         <div class="absolute -inset-3 bg-terracotta-500/10 rounded-3xl -rotate-1"></div>
         <div class="relative bg-anthracite-800 text-sand-50 rounded-3xl shadow-2xl p-10 lg:p-12">
-          <div class="absolute inset-0 opacity-[0.06] pointer-events-none rounded-3xl" style="background-image: radial-gradient(circle at 1px 1px, #FAF6EF 1px, transparent 0); background-size: 20px 20px;"></div>
+          <div class="absolute inset-0 plaster-grain-light opacity-[0.6] pointer-events-none rounded-3xl"></div>
           <div class="relative flex items-center justify-between gap-4 pb-6 border-b border-sand-50/10">
-            <div class="text-xs uppercase tracking-[0.25em] text-terracotta-500 font-semibold">Auf einen Blick</div>
+            <div class="text-xs uppercase tracking-[0.25em] text-terracotta-400 font-semibold">Auf einen Blick</div>
             <div class="text-xs uppercase tracking-widest text-sand-50/50">Cumia Putzsystem</div>
           </div>
           <ul class="relative mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-7 text-sm">
             <li class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-500 flex items-center justify-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-400 flex items-center justify-center flex-shrink-0">
                 <i data-lucide="clock-3" class="w-5 h-5"></i>
               </div>
               <div>
@@ -276,7 +324,7 @@
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-500 flex items-center justify-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-400 flex items-center justify-center flex-shrink-0">
                 <i data-lucide="leaf" class="w-5 h-5"></i>
               </div>
               <div>
@@ -285,7 +333,7 @@
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-500 flex items-center justify-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-400 flex items-center justify-center flex-shrink-0">
                 <i data-lucide="award" class="w-5 h-5"></i>
               </div>
               <div>
@@ -294,7 +342,7 @@
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-500 flex items-center justify-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-400 flex items-center justify-center flex-shrink-0">
                 <i data-lucide="map-pin" class="w-5 h-5"></i>
               </div>
               <div>
@@ -310,12 +358,12 @@
 </section>
 
 <!-- ARBEITSWEISE -->
-<section id="arbeitsweise" class="relative bg-anthracite-800 text-sand-50 py-20 lg:py-28 overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, #FAF6EF 1px, transparent 0); background-size: 24px 24px;"></div>
+<section id="arbeitsweise" class="relative bg-anthracite-800 text-sand-50 py-20 lg:py-28 overflow-hidden scroll-mt-32">
+  <div class="absolute inset-0 plaster-grain-light opacity-[0.6] pointer-events-none"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
     <div class="max-w-3xl">
-      <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-500 corner-line">Arbeitsweise</p>
+      <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-400 corner-line-left">Arbeitsweise</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium">So arbeiten wir.<br/>Ruhig, geplant, termintreu.</h2>
       <p class="mt-5 text-sand-50/75 leading-relaxed">
         Drei klare Schritte vom ersten Anruf bis zur fertigen Oberfläche. Keine Überraschungen im Preis, keine offenen Baustellen, kein Stress mit der Koordination.
@@ -325,27 +373,27 @@
     <div class="mt-16 grid md:grid-cols-3 gap-6">
       <div class="relative bg-anthracite-700 rounded-2xl p-7 border border-white/5">
         <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-terracotta-500 text-sand-50 flex items-center justify-center font-display text-xl">1</div>
-        <i data-lucide="messages-square" class="w-7 h-7 text-terracotta-500"></i>
-        <h3 class="mt-4 text-2xl font-semibold">Vor Ort Termin</h3>
+        <i data-lucide="messages-square" class="w-7 h-7 text-terracotta-400"></i>
+        <h3 class="mt-4 text-2xl font-semibold">Vor-Ort-Termin</h3>
         <p class="mt-2 text-sm text-sand-50/70 leading-relaxed">Kostenfrei und unverbindlich. Wir schauen uns Ihre Wände, Fassade oder Decke an, hören zu und nehmen die wichtigen Maße. Erst dann reden wir über Lösungen.</p>
       </div>
       <div class="relative bg-anthracite-700 rounded-2xl p-7 border border-white/5">
         <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-terracotta-500 text-sand-50 flex items-center justify-center font-display text-xl">2</div>
-        <i data-lucide="file-check-2" class="w-7 h-7 text-terracotta-500"></i>
+        <i data-lucide="file-check-2" class="w-7 h-7 text-terracotta-400"></i>
         <h3 class="mt-4 text-2xl font-semibold">Angebot</h3>
         <p class="mt-2 text-sm text-sand-50/70 leading-relaxed">Sie bekommen ein nachvollziehbares Angebot mit Materialien, Arbeitsstunden und festem Endpreis. Was draufsteht, gilt am Ende auch auf der Rechnung.</p>
       </div>
       <div class="relative bg-anthracite-700 rounded-2xl p-7 border border-white/5">
         <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-terracotta-500 text-sand-50 flex items-center justify-center font-display text-xl">3</div>
-        <i data-lucide="hammer" class="w-7 h-7 text-terracotta-500"></i>
+        <i data-lucide="hammer" class="w-7 h-7 text-terracotta-400"></i>
         <h3 class="mt-4 text-2xl font-semibold">Saubere Ausführung</h3>
         <p class="mt-2 text-sm text-sand-50/70 leading-relaxed">Termintreue Umsetzung, jeden Abend besenrein verlassene Baustelle, regelmäßige Updates per WhatsApp. Bei der Übergabe gehen wir mit Ihnen jedes Detail durch.</p>
       </div>
     </div>
 
-    <div class="mt-12 text-center">
+    <div class="mt-12">
       <a href="#kontakt" class="inline-flex items-center gap-2 btn-primary rounded-full px-7 py-4 font-semibold">
-        Vor Ort Termin vereinbaren
+        Vor-Ort-Termin vereinbaren
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
     </div>
@@ -353,11 +401,11 @@
 </section>
 
 <!-- REFERENZEN GALERIE -->
-<section id="referenzen" class="bg-white py-20 lg:py-28">
+<section id="referenzen" class="bg-white py-20 lg:py-28 scroll-mt-32">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
       <div class="max-w-2xl">
-        <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Referenzen</p>
+        <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line-left">Referenzen</p>
         <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Drei Projekte, die für uns sprechen.</h2>
         <p class="mt-3 text-anthracite-700/80">Ein Auszug aus unseren Arbeiten zwischen Köln, dem Bergischen Land und dem Sauerland. Jedes Projekt mit eigener Handschrift, jede Oberfläche das Ergebnis einer ruhigen Hand.</p>
       </div>
@@ -370,20 +418,20 @@
     <div class="mt-12 grid md:grid-cols-3 gap-6">
       <article class="group rounded-2xl overflow-hidden bg-sand-50 border border-sand-200 shadow-sm hover:shadow-xl transition">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&w=900&q=80" alt="Kindergarten Bielstein, ökologische Innenraumgestaltung mit Lehmputz für gesundes Raumklima" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&w=900&q=80" alt="Kindergarten Bielstein – ökologische Innenraumgestaltung mit Lehmputz für gesundes Raumklima" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
         </div>
         <div class="p-6">
           <div class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-olive-600">
             <i data-lucide="leaf" class="w-3 h-3"></i> Ökologisches Putzsystem
           </div>
           <h3 class="mt-2 font-display text-2xl text-anthracite-800">Kindergarten Bielstein</h3>
-          <p class="mt-2 text-sm text-anthracite-700/75 leading-relaxed">Gesundes Raumklima für die Kleinsten. Lehmputzsystem in einem Kindergarten im Bergischen, diffusionsoffen, schadstoffbindend, wohltuend.</p>
+          <p class="mt-2 text-sm text-anthracite-700/75 leading-relaxed">Gesundes Raumklima für die Kleinsten. Lehmputzsystem in einem Kindergarten im Bergischen – diffusionsoffen, schadstoffbindend, wohltuend.</p>
         </div>
       </article>
 
       <article class="group rounded-2xl overflow-hidden bg-sand-50 border border-sand-200 shadow-sm hover:shadow-xl transition">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80" alt="Schloss Mielenforst in Köln-Brück, denkmalgerechte Putzsanierung mit Kalkputz" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80" alt="Schloss Mielenforst in Köln-Brück – denkmalgerechte Putzsanierung mit Kalkputz" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
         </div>
         <div class="p-6">
           <div class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-terracotta-600">
@@ -396,14 +444,14 @@
 
       <article class="group rounded-2xl overflow-hidden bg-sand-50 border border-sand-200 shadow-sm hover:shadow-xl transition">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80" alt="Haus in Rüderrot, Fachwerksanierung mit Kalkputz und ökologischen Materialien" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80" alt="Wohnhaus in Rüderrot – Fachwerksanierung mit Kalkputz und ökologischen Materialien" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
         </div>
         <div class="p-6">
           <div class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-terracotta-600">
             <i data-lucide="home" class="w-3 h-3"></i> Fachwerksanierung
           </div>
           <h3 class="mt-2 font-display text-2xl text-anthracite-800">Haus in Rüderrot</h3>
-          <p class="mt-2 text-sm text-anthracite-700/75 leading-relaxed">Sauerland. Sanierung eines Wohnhauses mit Kalkputzsystem und behutsamer Fachwerkpflege, ehrliches Handwerk auf solider Substanz.</p>
+          <p class="mt-2 text-sm text-anthracite-700/75 leading-relaxed">Sauerland. Sanierung eines Wohnhauses mit Kalkputzsystem und behutsamer Fachwerkpflege – ehrliches Handwerk auf solider Substanz.</p>
         </div>
       </article>
     </div>
@@ -414,50 +462,76 @@
       <div class="h-px bg-sand-200 flex-1"></div>
     </div>
 
-    <!-- Im Live Betrieb durch echte Cumia Projektfotos ersetzen. -->
+    <!-- Im Live-Betrieb durch echte Cumia-Projektfotos ersetzen. -->
     <div class="masonry">
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: Lehmputz Innenraum mit warmer Oberfläche und natürlichem Raumklima" class="w-full">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Lehmputz-Innenraum mit warmer Oberfläche und natürlichem Raumklima" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Lehmputz Wohnraum</div>
           <div class="text-xs text-sand-50/70">Bergisches Land</div>
         </figcaption>
       </figure>
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: alte Fachwerkfassade in Waldbröl mit Kalkputz saniert" class="w-full">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Alte Fachwerkfassade in Waldbröl mit Kalkputz saniert" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Alte Fachwerkfassade</div>
           <div class="text-xs text-sand-50/70">Waldbröl</div>
         </figcaption>
       </figure>
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: Innenputz in einem Wohnobjekt in Köln-Brück" class="w-full">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Innenputz in einem Wohnobjekt in Köln-Brück" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Innenputz Wohnobjekt</div>
           <div class="text-xs text-sand-50/70">Köln-Brück</div>
         </figcaption>
       </figure>
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1581234293935-7eaff9b30e76?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: Außenfassade mit mineralischem Edelputz im Sauerland" class="w-full">
+        <img src="https://images.unsplash.com/photo-1581234293935-7eaff9b30e76?auto=format&fit=crop&w=900&q=80" alt="Außenfassade mit mineralischem Edelputz im Sauerland" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Außenfassade mineralisch</div>
           <div class="text-xs text-sand-50/70">Lüdenscheid</div>
         </figcaption>
       </figure>
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: Akustikputz in einem Konferenzraum mit dezenter Beleuchtung" class="w-full">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Akustikputz in einem Konferenzraum mit dezenter Beleuchtung" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Akustikputz Büro</div>
           <div class="text-xs text-sand-50/70">Bergisch Gladbach</div>
         </figcaption>
       </figure>
       <figure class="relative rounded-2xl overflow-hidden group">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Cumia Putzsystem Referenzprojekt: Lehmputz Detailaufnahme mit warmer ockerfarbener Oberfläche" class="w-full">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Lehmputz-Detailaufnahme mit warmer ockerfarbener Oberfläche" loading="lazy" class="w-full">
         <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-anthracite-900/85 to-transparent text-sand-50">
           <div class="text-sm font-semibold">Lehmputz Detail</div>
           <div class="text-xs text-sand-50/70">Herscheid</div>
         </figcaption>
       </figure>
+    </div>
+
+    <!-- Vorher / Nachher -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line-left">Vorher · Nachher</p>
+        <h3 class="mt-4 font-display text-3xl lg:text-4xl font-medium text-anthracite-800">Der Unterschied, den eine ruhige Hand macht.</h3>
+        <p class="mt-4 text-anthracite-700/80">Ziehen Sie den Regler – oder nutzen Sie die Pfeiltasten – und sehen Sie, wie aus rissiger, abblätternder Substanz eine atmungsaktive, langlebige Oberfläche wird.</p>
+        <p class="mt-3 text-xs text-anthracite-700/55">Beispielhafte Darstellung, im Live-Betrieb durch echte Cumia-Projektfotos ersetzen.</p>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-3 bg-terracotta-500/10 rounded-3xl rotate-1"></div>
+        <div id="baSlider" class="ba-slider relative rounded-3xl shadow-2xl aspect-[5/4]" role="slider" tabindex="0"
+             aria-label="Vorher-Nachher-Schieberegler" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&q=80"
+               alt="Fachwerkfassade mit Rissen und Putzabplatzungen vor der ökologischen Sanierung"
+               class="absolute inset-0 w-full h-full object-cover rounded-3xl" />
+          <div class="after rounded-3xl">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+                 alt="Frisch sanierte Fassade mit Kalkputz und ökologischem Putzsystem nach der Sanierung" />
+          </div>
+          <span class="label ba-label-vorher">Vorher</span>
+          <span class="label ba-label-nachher">Nachher</span>
+          <div id="baHandle" class="handle"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -470,13 +544,13 @@
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Was Bauherren von uns mitnehmen.</h2>
       <div class="mt-4 inline-flex items-center gap-2 bg-sand-50 border border-sand-200 rounded-full px-4 py-2 text-xs text-anthracite-700/80">
         <i data-lucide="info" class="w-4 h-4 text-terracotta-500"></i>
-        Beispieldarstellung. Echte Bewertungen werden aus dem Google Business Profil eingebunden.
+        Beispieldarstellung. Echte Bewertungen werden aus dem Google-Business-Profil eingebunden.
       </div>
     </div>
 
     <div class="mt-12 grid md:grid-cols-3 gap-6">
       <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500">
+        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
         </div>
         <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Der Kostenvoranschlag hat bis auf den letzten Euro gestimmt. Termine wurden eingehalten, die Baustelle war jeden Abend besenrein. So stellt man sich Handwerk vor."</blockquote>
@@ -490,7 +564,7 @@
       </article>
 
       <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500">
+        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
         </div>
         <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Vom ersten Beratungstermin bis zur Endabnahme war alles aus einem Guss. Die Mannschaft war freundlich, hat unsere Wünsche ernst genommen und beim Material gute Vorschläge gemacht."</blockquote>
@@ -504,10 +578,10 @@
       </article>
 
       <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500">
+        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
         </div>
-        <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Wir haben uns bewusst für Lehmputz entschieden, und nach der Beratung gemerkt, dass wir genau den richtigen Betrieb gefunden haben. Saubere Ausführung, ehrliche Materialempfehlungen, spürbares Raumklima."</blockquote>
+        <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Wir haben uns bewusst für Lehmputz entschieden und nach der Beratung gemerkt, dass wir genau den richtigen Betrieb gefunden haben. Saubere Ausführung, ehrliche Materialempfehlungen, spürbares Raumklima."</blockquote>
         <div class="mt-5 flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-terracotta-500/15 text-terracotta-700 font-semibold flex items-center justify-center">L.B.</div>
           <div>
@@ -521,10 +595,10 @@
 </section>
 
 <!-- STANDORTE -->
-<section id="standorte" class="bg-white py-20 lg:py-28">
+<section id="standorte" class="bg-white py-20 lg:py-28 scroll-mt-32">
   <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
     <div>
-      <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Einsatzgebiet</p>
+      <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line-left">Einsatzgebiet</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Bergisches Land · Köln · Sauerland.</h2>
       <p class="mt-4 text-anthracite-700/80 max-w-xl">Cumia Putzsystem ist tätig vom Bergischen Kreis über Köln und Köln-Leverkusen bis nach Lüdenscheid und Herscheid im Sauerland. Persönliche Termine vor Ort, ehrliche Beratung, kurze Wege im gesamten Einsatzgebiet.</p>
 
@@ -565,53 +639,56 @@
           class="w-full h-full"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Cumia Putzsystem Einsatzgebiet Karte Bergisches Land bis Sauerland"></iframe>
+          title="Karte: Einsatzgebiet von Cumia Putzsystem zwischen Bergischem Land und Sauerland"></iframe>
       </div>
     </div>
   </div>
 </section>
 
 <!-- KONTAKT -->
-<section id="kontakt" class="bg-sand-50 py-20 lg:py-28">
+<section id="kontakt" class="bg-sand-50 py-20 lg:py-28 scroll-mt-32">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="text-center max-w-3xl mx-auto">
       <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Kontakt</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Reden wir über Ihr Projekt.</h2>
-      <p class="mt-4 text-anthracite-700/80">Schnellste Antwort per Telefon oder WhatsApp. Schicken Sie uns gerne direkt ein Foto der Stelle, um die es geht, wir melden uns innerhalb eines Werktags.</p>
+      <p class="mt-4 text-anthracite-700/80">Schnellste Antwort per Telefon oder WhatsApp. Schicken Sie uns gerne direkt ein Foto der Stelle, um die es geht – wir melden uns innerhalb eines Werktags.</p>
     </div>
 
     <div class="mt-14 grid lg:grid-cols-5 gap-8">
       <!-- Formular -->
-      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm" onsubmit="event.preventDefault(); alert('Demo Formular. Im Live Betrieb verbinden wir das mit dem Cumia E Mail Postfach.');">
+      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm" onsubmit="event.preventDefault(); alert('Demo-Formular. Im Live-Betrieb verbinden wir das mit dem Cumia-E-Mail-Postfach.');">
         <div class="grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-xs uppercase tracking-widest font-semibold text-anthracite-700/70">Name</span>
-            <input type="text" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="Ihr Name" />
+            <input type="text" name="name" autocomplete="name" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="Ihr Name" />
           </label>
           <label class="block">
             <span class="text-xs uppercase tracking-widest font-semibold text-anthracite-700/70">Telefon</span>
-            <input type="tel" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="0157 …" />
+            <input type="tel" name="tel" autocomplete="tel" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="0157 …" />
           </label>
         </div>
         <label class="block mt-4">
           <span class="text-xs uppercase tracking-widest font-semibold text-anthracite-700/70">Ihr Anliegen</span>
-          <textarea rows="5" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="Worum geht es? Welche Leistung, welches Objekt, gewünschter Zeitraum?"></textarea>
+          <textarea rows="5" name="nachricht" required class="mt-1 w-full rounded-xl border border-sand-200 bg-sand-50 px-4 py-3 focus:outline-none focus:border-terracotta-500 focus:bg-white transition" placeholder="Worum geht es? Welche Leistung, welches Objekt, gewünschter Zeitraum?"></textarea>
         </label>
         <div class="mt-4 flex items-center gap-3 p-4 rounded-xl border border-dashed border-sand-200 bg-sand-50">
           <i data-lucide="image-plus" class="w-6 h-6 text-terracotta-500"></i>
           <div class="flex-1">
             <div class="text-sm font-semibold text-anthracite-800">Fotos der Schadensstelle hochladen</div>
-            <div class="text-xs text-anthracite-700/60">Optional, sparen Sie sich den ersten Vor Ort Termin</div>
+            <div class="text-xs text-anthracite-700/60">Optional – sparen Sie sich den ersten Vor-Ort-Termin</div>
           </div>
           <label class="cursor-pointer btn-ghost rounded-full px-4 py-2 text-sm font-semibold">
             Auswählen
             <input type="file" multiple accept="image/*" class="hidden" />
           </label>
         </div>
+        <label class="mt-4 flex items-start gap-3 text-xs text-anthracite-700/70">
+          <input type="checkbox" required class="mt-0.5 w-4 h-4 accent-terracotta-500" />
+          <span>Ich habe die <a href="#datenschutz" class="underline hover:text-terracotta-600">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu.</span>
+        </label>
         <button type="submit" class="mt-6 btn-primary w-full rounded-full py-4 font-semibold text-base">
           Erstgespräch anfragen
         </button>
-        <p class="mt-3 text-xs text-anthracite-700/60 text-center">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung Ihrer Anfrage zu.</p>
       </form>
 
       <!-- Direktkanäle -->
@@ -623,19 +700,19 @@
             </div>
             <div>
               <div class="text-xs uppercase tracking-widest text-sand-50/70">Telefon</div>
-              <div class="font-display text-2xl">0178 9455 038</div>
+              <div class="font-display text-2xl">0178 9455038</div>
             </div>
           </div>
         </a>
 
-        <a href="https://wa.me/491571111111" class="block bg-olive-500 text-sand-50 rounded-2xl p-7 hover:bg-olive-600 transition">
+        <a href="https://wa.me/491789455038" class="block bg-olive-500 text-sand-50 rounded-2xl p-7 hover:bg-olive-600 transition">
           <div class="flex items-center gap-4">
             <div class="w-14 h-14 rounded-full bg-sand-50/15 flex items-center justify-center">
               <i data-lucide="message-circle" class="w-6 h-6"></i>
             </div>
             <div>
-              <div class="text-xs uppercase tracking-widest text-sand-50/80">WhatsApp Business</div>
-              <div class="font-display text-2xl">Nummer folgt</div>
+              <div class="text-xs uppercase tracking-widest text-sand-50/80">WhatsApp</div>
+              <div class="font-display text-2xl">0178 9455038</div>
             </div>
           </div>
         </a>
@@ -680,7 +757,7 @@
   <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div>
       <div class="flex items-center gap-3">
-        <img src="Logo.jpg" alt="Cumia Putzsystem Logo" class="h-14 w-auto rounded bg-sand-50 p-1" />
+        <img src="Logo.jpg" alt="Cumia Putzsystem Logo" class="h-14 w-auto rounded bg-sand-50 p-1" width="56" height="56" />
         <div class="font-display text-2xl text-sand-50">Cumia Putzsystem</div>
       </div>
       <p class="mt-4 text-sm leading-relaxed text-sand-50/60">
@@ -701,8 +778,8 @@
       <ul class="space-y-2 text-sm">
         <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-terracotta-500"></i> Halstenbacher Str. 3a<br/>51645 Gummersbach</li>
         <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-terracotta-500"></i> Mo – Sa · 8:00 – 19:00 Uhr</li>
-        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-terracotta-500"></i> <a href="tel:+491789455038" class="hover:text-terracotta-500">0178 9455 038</a></li>
-        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-terracotta-500"></i> E-Mail folgt</li>
+        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-terracotta-500"></i> <a href="tel:+491789455038" class="hover:text-terracotta-500">0178 9455038</a></li>
+        <li class="flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 text-terracotta-500"></i> <a href="https://wa.me/491789455038" class="hover:text-terracotta-500">WhatsApp</a></li>
       </ul>
     </div>
 
@@ -718,15 +795,54 @@
     </div>
 
     <div>
-      <div class="text-sand-50 font-semibold mb-4">Sitemap</div>
+      <div class="text-sand-50 font-semibold mb-4">Sitemap & Recht</div>
       <ul class="space-y-2 text-sm">
         <li><a href="#ueber-uns" class="hover:text-terracotta-500">Über uns</a></li>
         <li><a href="#referenzen" class="hover:text-terracotta-500">Referenzen</a></li>
         <li><a href="#standorte" class="hover:text-terracotta-500">Einzugsgebiet</a></li>
         <li><a href="#kontakt" class="hover:text-terracotta-500">Kontakt</a></li>
-        <li><a href="#" class="hover:text-terracotta-500">Impressum</a></li>
-        <li><a href="#" class="hover:text-terracotta-500">Datenschutz</a></li>
+        <li><a href="#impressum" class="hover:text-terracotta-500">Impressum</a></li>
+        <li><a href="#datenschutz" class="hover:text-terracotta-500">Datenschutz</a></li>
       </ul>
+    </div>
+  </div>
+
+  <!-- IMPRESSUM -->
+  <div id="impressum" class="max-w-7xl mx-auto px-4 lg:px-8 mt-14 pt-10 border-t border-sand-50/10 scroll-mt-32">
+    <h2 class="font-display text-2xl text-sand-50">Impressum</h2>
+    <p class="mt-1 text-xs text-terracotta-400 uppercase tracking-widest">Angaben gemäß § 5 DDG</p>
+    <div class="mt-5 grid md:grid-cols-2 gap-6 text-sm text-sand-50/70 leading-relaxed">
+      <div>
+        <p><span class="text-sand-50 font-semibold">Cumia Putzsystem</span><br/>
+        Inhaber: Giuseppe Cumia, Stuckateurmeister<br/>
+        Halstenbacher Str. 3a<br/>
+        51645 Gummersbach</p>
+        <p class="mt-4"><span class="text-sand-50 font-semibold">Kontakt</span><br/>
+        Telefon: <a href="tel:+491789455038" class="hover:text-terracotta-400">0178 9455038</a><br/>
+        E-Mail: <span class="italic">[bitte ergänzen]</span></p>
+      </div>
+      <div>
+        <p><span class="text-sand-50 font-semibold">Berufsbezeichnung</span><br/>
+        Stuckateurmeister (verliehen in der Bundesrepublik Deutschland)<br/>
+        Mitglied der Stuckateurinnung / Handwerkskammer zu Köln</p>
+        <p class="mt-4"><span class="text-sand-50 font-semibold">Umsatzsteuer-ID</span><br/>
+        <span class="italic">[USt-IdNr. gem. § 27a UStG bitte ergänzen]</span></p>
+        <p class="mt-4 text-xs text-sand-50/50">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Giuseppe Cumia, Anschrift wie oben.</p>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-sand-50/40">Hinweis: Bitte fehlende Pflichtangaben (E-Mail, ggf. USt-IdNr., Aufsichtsbehörde/Handwerkskammer-Details) vor dem Live-Gang ergänzen.</p>
+  </div>
+
+  <!-- DATENSCHUTZ (Kurzfassung) -->
+  <div id="datenschutz" class="max-w-7xl mx-auto px-4 lg:px-8 mt-10 pt-10 border-t border-sand-50/10 scroll-mt-32">
+    <h2 class="font-display text-2xl text-sand-50">Datenschutz auf einen Blick</h2>
+    <p class="mt-1 text-xs text-terracotta-400 uppercase tracking-widest">Informationen nach Art. 13 DSGVO</p>
+    <div class="mt-5 text-sm text-sand-50/70 leading-relaxed space-y-3 max-w-3xl">
+      <p><span class="text-sand-50 font-semibold">Verantwortlicher:</span> Giuseppe Cumia, Cumia Putzsystem, Halstenbacher Str. 3a, 51645 Gummersbach.</p>
+      <p><span class="text-sand-50 font-semibold">Kontaktanfragen:</span> Wenn Sie uns über das Formular, per Telefon oder WhatsApp kontaktieren, verarbeiten wir Ihre Angaben (Name, Telefon, Nachricht, ggf. Fotos) ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
+      <p><span class="text-sand-50 font-semibold">Karte:</span> Zur Darstellung des Einsatzgebiets wird eine OpenStreetMap-Karte eingebunden; dabei kann Ihre IP-Adresse an den Kartendienst übermittelt werden.</p>
+      <p><span class="text-sand-50 font-semibold">Ihre Rechte:</span> Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit sowie Beschwerderecht bei einer Aufsichtsbehörde.</p>
+      <p class="text-xs text-sand-50/40">Hinweis: Dies ist eine gekürzte Fassung. Vor dem Live-Gang sollte eine vollständige, juristisch geprüfte Datenschutzerklärung (inkl. Hosting, eingesetzter Dienste und Speicherfristen) ergänzt werden.</p>
     </div>
   </div>
 
@@ -737,7 +853,7 @@
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/491571111111" class="fixed bottom-6 right-6 z-50 group" aria-label="WhatsApp Chat starten">
+<a href="https://wa.me/491789455038" class="fixed bottom-6 right-6 z-50 group" aria-label="WhatsApp-Chat mit Cumia Putzsystem starten">
   <div class="absolute inset-0 rounded-full bg-olive-500 animate-ping opacity-30"></div>
   <div class="relative w-14 h-14 rounded-full bg-olive-500 hover:bg-olive-600 shadow-2xl flex items-center justify-center text-sand-50 transition">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
@@ -745,23 +861,33 @@
 </a>
 
 <script>
-  // Lucide icons
+  // Lucide-Icons
   if (window.lucide) lucide.createIcons();
 
-  // Mobile menu
+  // Header-Zustand beim Scrollen
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile-Menü
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    const open = mobileMenu.classList.toggle('hidden') === false;
+    hamburger.setAttribute('aria-expanded', String(open));
     const icon = hamburger.querySelector('[data-lucide]');
     if (icon) {
-      icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+      icon.setAttribute('data-lucide', open ? 'x' : 'menu');
       lucide.createIcons();
     }
   });
-  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
 
-  // Vorher Nachher Slider
+  // Vorher/Nachher-Slider (Maus, Touch & Tastatur)
   (function() {
     const slider = document.getElementById('baSlider');
     if (!slider) return;
@@ -773,6 +899,7 @@
       pct = Math.max(0, Math.min(100, pct));
       after.style.width = pct + '%';
       handle.style.left = pct + '%';
+      slider.setAttribute('aria-valuenow', Math.round(pct));
       const rect = slider.getBoundingClientRect();
       afterImg.style.width = rect.width + 'px';
     }
@@ -799,6 +926,15 @@
     slider.addEventListener('click', (e) => {
       if (e.target === handle) return;
       onMove(e.clientX);
+    });
+
+    // Tastaturbedienung (Accessibility)
+    slider.addEventListener('keydown', (e) => {
+      const cur = parseFloat(slider.getAttribute('aria-valuenow')) || 50;
+      if (e.key === 'ArrowLeft') { setPos(cur - 5); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { setPos(cur + 5); e.preventDefault(); }
+      if (e.key === 'Home') { setPos(0); e.preventDefault(); }
+      if (e.key === 'End') { setPos(100); e.preventDefault(); }
     });
 
     window.addEventListener('resize', () => setPos(parseFloat(handle.style.left) || 50));
