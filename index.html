@@ -136,6 +136,13 @@
   @media (min-width: 1024px) { .masonry { column-count: 3; } }
   .masonry > * { break-inside: avoid; margin-bottom: 1rem; }
 
+  /* Galerie auf dem Handy einklappen: nur die ersten Bilder zeigen, Rest per Button */
+  .gal-more { display: none; }
+  @media (max-width: 639px) {
+    .masonry.is-collapsed > .gal-item:nth-child(n+5) { display: none; }
+    .gal-more { display: inline-flex; }
+  }
+
   /* Logo-/Mitgliedschaften-Badges (Platzhalter, bis echte Logodateien vorliegen) */
   .logo-badge { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; padding: 0.85rem 1.4rem; border-radius: 0.85rem; border: 1px solid rgba(250,246,239,0.15); background: rgba(250,246,239,0.04); transition: border-color 0.2s, background 0.2s; }
   .logo-badge:hover { border-color: rgba(184,87,66,0.6); background: rgba(250,246,239,0.07); }
@@ -544,7 +551,7 @@
     </div>
 
     <!-- Galerie mit eigenen Projektfotos -->
-    <div class="masonry">
+    <div id="projektGalerie" class="masonry is-collapsed">
       <figure class="gal-item relative rounded-2xl overflow-hidden group cursor-zoom-in" data-full="bilder/galerie-01-gross.jpg" data-cap="Frisch verputzter Wohnraum" data-kat="Innenputz">
         <img src="bilder/galerie-01.jpg" alt="Frisch verputzter Wohnraum – Projektfoto von Cumia Putzwerk" loading="lazy" width="1126" height="2000" class="w-full transition duration-700 group-hover:scale-105">
         <div class="absolute inset-0 bg-anthracite-900/0 group-hover:bg-anthracite-900/15 transition"></div>
@@ -653,6 +660,13 @@
         </figcaption>
         <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-sand-50/90 text-anthracite-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i data-lucide="maximize-2" class="w-4 h-4"></i></span>
       </figure>
+    </div>
+    <div class="mt-6 text-center">
+      <button id="galMore" type="button" aria-expanded="false" aria-controls="projektGalerie"
+              class="gal-more items-center gap-2 mx-auto btn-primary rounded-full px-6 py-3 text-sm font-semibold">
+        <span data-gal-more-label>Mehr Projekte anzeigen</span>
+        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+      </button>
     </div>
     <p class="mt-6 text-center text-xs text-anthracite-700/55">Eigene Aufnahmen aus laufenden und abgeschlossenen Projekten. Zum Vergrößern auf ein Bild tippen.</p>
     <!-- Vorher / Nachher -->
@@ -1155,6 +1169,23 @@
       if (e.key === 'Escape') close();
       if (e.key === 'ArrowRight') show(i + 1);
       if (e.key === 'ArrowLeft') show(i - 1);
+    });
+  })();
+
+  /* Galerie auf dem Handy aus-/einklappen */
+  (function () {
+    const gal = document.getElementById('projektGalerie');
+    const btn = document.getElementById('galMore');
+    if (!gal || !btn) return;
+    const label = btn.querySelector('[data-gal-more-label]');
+    const icon = btn.querySelector('[data-lucide]');
+    btn.addEventListener('click', () => {
+      const collapsed = gal.classList.toggle('is-collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      if (label) label.textContent = collapsed ? 'Mehr Projekte anzeigen' : 'Weniger anzeigen';
+      if (icon) icon.setAttribute('data-lucide', collapsed ? 'chevron-down' : 'chevron-up');
+      if (window.lucide) lucide.createIcons();
+      if (collapsed) gal.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   })();
 </script>
