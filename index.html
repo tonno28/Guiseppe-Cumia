@@ -831,7 +831,13 @@
 
     <div class="mt-14 grid lg:grid-cols-5 gap-8">
       <!-- Formular -->
-      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm" onsubmit="event.preventDefault(); alert('Demo-Formular. Im Live-Betrieb verbinden wir das mit dem Cumia-E-Mail-Postfach.');">
+      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm"
+            action="https://formsubmit.co/info@cumia-putzwerk.de" method="POST" enctype="multipart/form-data">
+        <!-- FormSubmit (kostenlos, kein Konto nötig) – Anfragen gehen an info@cumia-putzwerk.de -->
+        <input type="hidden" name="_subject" value="Neue Anfrage über cumia-putzwerk.de">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.cumia-putzwerk.de/danke.html">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
         <div class="grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-xs uppercase tracking-widest font-semibold text-anthracite-700/70">Name</span>
@@ -854,7 +860,7 @@
           </div>
           <label class="cursor-pointer btn-ghost rounded-full px-4 py-2 text-sm font-semibold">
             Auswählen
-            <input type="file" multiple accept="image/*" class="hidden" />
+            <input type="file" name="anhaenge" multiple accept="image/*" class="hidden" />
           </label>
         </div>
         <label class="mt-4 flex items-start gap-3 text-xs text-anthracite-700/70">
