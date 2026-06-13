@@ -456,8 +456,8 @@
       <div class="relative bg-anthracite-700 rounded-2xl p-7 border border-white/5">
         <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-terracotta-500 text-sand-50 flex items-center justify-center font-display text-xl">1</div>
         <i data-lucide="messages-square" class="w-7 h-7 text-terracotta-400"></i>
-        <h3 class="mt-4 text-2xl font-semibold">Vor-Ort-Termin</h3>
-        <p class="mt-2 text-sm text-sand-50/70 leading-relaxed">Kostenfrei und unverbindlich. Wir schauen uns Ihre Wände, Fassade oder Decke an, hören zu und nehmen die wichtigen Maße. Erst dann reden wir über Lösungen.</p>
+        <h3 class="mt-4 text-2xl font-semibold">Erstgespräch &amp; Vor-Ort-Termin</h3>
+        <p class="mt-2 text-sm text-sand-50/70 leading-relaxed">Das Erstgespräch am Telefon ist kostenlos. Für einen Vor-Ort-Termin berechnen wir 90 € – die wir Ihnen bei Beauftragung vollständig gutschreiben. Wir schauen uns Ihre Wände, Fassade oder Decke an, hören zu und nehmen die wichtigen Maße. Erst dann reden wir über Lösungen.</p>
       </div>
       <div class="relative bg-anthracite-700 rounded-2xl p-7 border border-white/5">
         <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-terracotta-500 text-sand-50 flex items-center justify-center font-display text-xl">2</div>
@@ -826,11 +826,18 @@
       <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Kontakt</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Reden wir über Ihr Projekt.</h2>
       <p class="mt-4 text-anthracite-700/80">Schnellste Antwort per Telefon oder WhatsApp. Schicken Sie uns gerne direkt ein Foto der Stelle, um die es geht – wir melden uns innerhalb eines Werktags.</p>
+      <p class="mt-3 text-sm text-anthracite-700/70">Das Erstgespräch am Telefon ist <strong class="font-semibold text-anthracite-800">kostenlos</strong>. Ein Termin vor Ort kostet <strong class="font-semibold text-anthracite-800">90 €</strong> – bei Beauftragung schreiben wir Ihnen diesen Betrag vollständig gut.</p>
     </div>
 
     <div class="mt-14 grid lg:grid-cols-5 gap-8">
       <!-- Formular -->
-      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm" onsubmit="event.preventDefault(); alert('Demo-Formular. Im Live-Betrieb verbinden wir das mit dem Cumia-E-Mail-Postfach.');">
+      <form class="lg:col-span-3 bg-white rounded-3xl p-8 border border-sand-200 shadow-sm"
+            action="https://formsubmit.co/info@cumia-putzwerk.de" method="POST" enctype="multipart/form-data">
+        <!-- FormSubmit (kostenlos, kein Konto nötig) – Anfragen gehen an info@cumia-putzwerk.de -->
+        <input type="hidden" name="_subject" value="Neue Anfrage über cumia-putzwerk.de">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.cumia-putzwerk.de/danke.html">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
         <div class="grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-xs uppercase tracking-widest font-semibold text-anthracite-700/70">Name</span>
@@ -853,7 +860,7 @@
           </div>
           <label class="cursor-pointer btn-ghost rounded-full px-4 py-2 text-sm font-semibold">
             Auswählen
-            <input type="file" multiple accept="image/*" class="hidden" />
+            <input type="file" name="anhaenge" multiple accept="image/*" class="hidden" />
           </label>
         </div>
         <label class="mt-4 flex items-start gap-3 text-xs text-anthracite-700/70">

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Danke für Ihre Anfrage · Cumia Putzwerk</title>
+<meta name="description" content="Vielen Dank für Ihre Anfrage bei Cumia Putzwerk. Wir melden uns innerhalb eines Werktags." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#1F2937" />
+<link rel="icon" href="Logo.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terracotta: { 50: '#FBF4F1', 100: '#F5E4DC', 400: '#C76B54', 500: '#B85742', 600: '#A0432B', 700: '#84371F' },
+          sand: { 50: '#FAF6EF', 100: '#F5EFE6', 200: '#EBE1CF', 300: '#DECBAE' },
+          anthracite: { 700: '#2A3340', 800: '#1F2937', 900: '#111827', 950: '#0B1018' },
+          olive: { 500: '#7A8471', 600: '#5F6A57' }
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          sans: ['"DM Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'DM Sans', system-ui, sans-serif; color: #1F2937; background: #FAF6EF; }
+  h1, h2 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+  .btn-primary { background: #B85742; color: #FAF6EF; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .btn-primary:hover { background: #A0432B; transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(160,67,43,0.55); }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4">
+  <main class="max-w-lg w-full bg-white rounded-3xl border border-sand-200 shadow-sm p-10 text-center">
+    <span class="mx-auto w-16 h-16 rounded-full bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center">
+      <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+    </span>
+    <h1 class="mt-6 text-3xl lg:text-4xl font-medium text-anthracite-800">Vielen Dank für Ihre Anfrage!</h1>
+    <p class="mt-4 text-anthracite-700/80 leading-relaxed">
+      Ihre Nachricht ist bei uns angekommen. Wir melden uns innerhalb eines Werktags bei Ihnen.
+      Bei dringenden Anliegen erreichen Sie uns am schnellsten telefonisch.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="index.html" class="btn-primary rounded-full px-7 py-3.5 font-semibold flex items-center gap-2">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Zur Startseite
+      </a>
+      <a href="tel:+491789455038" class="rounded-full px-7 py-3.5 font-semibold flex items-center gap-2 border border-sand-200 text-anthracite-800 hover:bg-sand-100 transition">
+        <i data-lucide="phone" class="w-4 h-4 text-terracotta-500"></i> 0178 9455038
+      </a>
+    </div>
+  </main>
+  <script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
