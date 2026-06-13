@@ -704,53 +704,30 @@
       <p class="text-xs font-semibold tracking-[0.25em] uppercase text-terracotta-600 corner-line">Stimmen</p>
       <h2 class="mt-4 font-display text-4xl lg:text-5xl font-medium text-anthracite-800">Was Bauherren von uns mitnehmen.</h2>
       <div class="mt-4 inline-flex items-center gap-2 bg-sand-50 border border-sand-200 rounded-full px-4 py-2 text-xs text-anthracite-700/80">
-        <i data-lucide="info" class="w-4 h-4 text-terracotta-500"></i>
-        Beispieldarstellung. Echte Bewertungen werden aus dem Google-Business-Profil eingebunden.
+        <i data-lucide="badge-check" class="w-4 h-4 text-terracotta-500"></i>
+        Echte Kundenbewertungen – live aus unserem Google-Profil.
       </div>
     </div>
 
-    <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
-          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-        </div>
-        <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Der Kostenvoranschlag hat bis auf den letzten Euro gestimmt. Termine wurden eingehalten, die Baustelle war jeden Abend besenrein. So stellt man sich Handwerk vor."</blockquote>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-terracotta-500/15 text-terracotta-700 font-semibold flex items-center justify-center">M.K.</div>
+    <!-- Google-Bewertungen via Featurable – DSGVO-konform erst nach aktiver Einwilligung -->
+    <div class="mt-12">
+      <div id="reviewsBox"
+           data-consent="reviews"
+           data-featurable-id="featurable-cd58ef03-bbef-457f-be43-03ae2d9e09b6"
+           class="rounded-3xl border border-sand-200 bg-sand-50 p-6 lg:p-8">
+        <div class="flex flex-col items-center justify-center text-center gap-4 py-8">
+          <span class="w-12 h-12 rounded-full bg-terracotta-500 flex items-center justify-center text-sand-50">
+            <i data-lucide="star" class="w-6 h-6"></i>
+          </span>
           <div>
-            <div class="text-sm font-semibold text-anthracite-800">Familie M. K.</div>
-            <div class="text-xs text-anthracite-700/60">Bergisches Land · Lehmputz Wohnhaus</div>
+            <div class="font-display text-2xl text-anthracite-800">Unsere Google-Bewertungen</div>
+            <p class="mt-1 text-sm text-anthracite-700/70 max-w-md mx-auto">Die Bewertungen werden über den Dienst Featurable aus unserem Google-Profil geladen – dabei werden Daten an Google und Featurable übertragen.</p>
           </div>
+          <button type="button" data-reviews-load class="btn-primary rounded-full px-6 py-3 text-sm font-semibold">
+            Google-Bewertungen laden
+          </button>
         </div>
-      </article>
-
-      <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
-          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-        </div>
-        <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Vom ersten Beratungstermin bis zur Endabnahme war alles aus einem Guss. Die Mannschaft war freundlich, hat unsere Wünsche ernst genommen und beim Material gute Vorschläge gemacht."</blockquote>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-terracotta-500/15 text-terracotta-700 font-semibold flex items-center justify-center">A.S.</div>
-          <div>
-            <div class="text-sm font-semibold text-anthracite-800">Herr A. S.</div>
-            <div class="text-xs text-anthracite-700/60">Köln-Leverkusen · Fachwerkfassade mit Kalkputz</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-2xl p-7 border border-sand-200 shadow-sm">
-        <div class="flex items-center gap-1 text-terracotta-500" aria-label="5 von 5 Sternen">
-          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-        </div>
-        <blockquote class="mt-4 text-anthracite-800 font-display text-xl leading-snug">„Wir haben uns bewusst für Lehmputz entschieden und nach der Beratung gemerkt, dass wir genau den richtigen Betrieb gefunden haben. Saubere Ausführung, ehrliche Materialempfehlungen, spürbares Raumklima."</blockquote>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-terracotta-500/15 text-terracotta-700 font-semibold flex items-center justify-center">L.B.</div>
-          <div>
-            <div class="text-sm font-semibold text-anthracite-800">Frau L. B.</div>
-            <div class="text-xs text-anthracite-700/60">Sauerland · Innenputz und Akustik</div>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
